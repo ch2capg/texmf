@@ -33,7 +33,6 @@ ENTRY
     key
     month
     note
-    arxiv
     number
     organization
     pages
@@ -44,6 +43,8 @@ ENTRY
     type
     volume
     year
+    arxiv
+    doi
   }
   {}
   { label }
@@ -548,6 +549,15 @@ FUNCTION {format.incoll.inproc.crossref}
   " \cite{" * crossref * "}" *
 }
 
+% FUNCTION {format.arxiv}
+% {
+%   s :=
+%   s empty$
+%   { "" }
+%   { " arXiv- " * s * "." }
+%   if$
+% }
+
 FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
@@ -565,11 +575,20 @@ FUNCTION {article}
   if$
   new.block
   note output
-  new.block
-  arXiv missing$
-    { }
-    { " arXiv:" * arxiv output}
+  arxiv missing$
+  {}
+  {
+    new.block
+    "arXiv:" arxiv * output
+  }
   if$
+%   doi missing$
+%   {}
+%   {
+%     new.block
+%     "doi:\texttt{" doi * "\/}" * output
+%   }
+%   if$
   fin.entry
 }
 
