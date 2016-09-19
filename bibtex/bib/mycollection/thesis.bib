@@ -1,3 +1,15 @@
+@preamble{ "\makeatletter" }
+@preamble{ "\@ifundefined{url}{\def\url#1{\texttt{#1}}}{}" }
+@preamble{ "\makeatother" }
+
+author names
+@string{lubich = "Lubich, {\relax Ch}ristian"}
+@string{akrivis = "Akrivis, Georgios"}
+@string{and = " and "}
+journal names
+#string{jmb = "Journal of Mathematical Biology"}
+@string{jmb = "J. Math. Biol."}
+
 
 @Article{	  1975_ddw,
   author	= {Douglas, {Jr.J.} and Dupont, {T.} and Wahlbin, {L.}},
@@ -94,18 +106,18 @@
   comment	= {\url{http://na.uni-tuebingen.de/~power/papers/nonlinear.pdf}}
 }
 
-@InBook{	  adams,
+@Book{	  adams,
   title		= {Sobolev Spaces},
   author	= {Adams, R. and Fournier, J.},
   publisher	= {Academic Press},
-  year		= {2003}
+  year		= 2003
 }
 
 @Article{	  akrivislubich_quasilinbdf,
   title		= {Fully implicit, linearly implicit and implicit--explicit
 		  backward difference formulae for quasi-linear parabolic
 		  equations},
-  author	= {Akrivis, G. and Lubich, {Ch.}},
+  author	= akrivis # and # lubich,
   journal	= {Numerische Mathematik},
   year		= {2015},
   pages		= {1--23},
@@ -163,11 +175,11 @@
   title		= {The surface finite element method for pattern formation on
 		  evolving biological surfaces},
   author	= {Barreira, R. and Elliott, C.~M. and Madzvamuse, A},
-  journal	= {Journal of mathematical biology},
-  volume	= {63},
-  number	= {6},
+  journal	= jmb,
+  volume	= 63,
+  number	= 6,
   pages		= {1095--1119},
-  year		= {2011},
+  year		= 2011,
   publisher	= {Springer},
   doi		= {10.1007/s00285-011-0401-0}
 }
@@ -604,8 +616,7 @@
   number	= {2},
   pages		= {377--402},
   issn		= {0272-4979},
-  doi		= {10.1093/imanum/drs022},
-  url		= {http://dx.doi.org/10.1093/imanum/drs022}
+  doi		= {10.1093/imanum/drs022}
 }
 
 @Article{	  elliottstyles_alenumerics,
@@ -891,16 +902,21 @@
   comment	= {semilinear}
 }
 
-@InBook{	  mcfeckart,
+@Book{	  mcfeckart,
   title		= {Regularity theory for mean curvature flow},
-  author	= {Ecker, K.},
-  publisher	= {Birkh\"{a}user},
-  year		= {2004}
+  author	= {Ecker, Klaus},
+  publisher	= {Birk\-h\"{a}us\-er},
+  year		= 2004
 }
 
 @Article{	  memoli,
   title		= {Implicit brain imaging},
-  author	= {M\'{e}moli, F. and Sapiro, G. and Thompson, P.},
+  author	= {M\'{e}moli, Facundo and Sapiro, Guillermo and Thompson, Paul},
+  doi           = {10.1016/j.neuroimage.2004.07.072},
+  journal       = {NeuroImage},
+  year          = 2004,
+  volume        = 23,
+  pages         = {179--188},
   comment	= {quasilinear}
 }
 
@@ -977,7 +993,7 @@
 @Article{	  raetz2006,
   title		= {A diffuse--interface approximation for surface diffusion
 		  including adatoms},
-  author	= {Rätz, A. and Voigt, A.},
+  author	= {R{\"a}tz, A. and Voigt, A.},
   journal	= {Institute of Physics Publishing},
   year		= {2006},
   comment	= {phase-field, quasilinear}
@@ -998,14 +1014,18 @@
   key		= {Sage},
   author	= {The Sage Developers},
   title		= {{S}age {M}athematics {S}oftware ({V}ersion 6.1.1)},
-  note		= {{\tt http://www.sagemath.org}},
+  note		= {\url{http://www.sagemath.org}},
   year		= {2014}
 }
 
 @Article{	  schoenborn1999,
   title		= {Kinetics of phase ordering on curved surfaces},
-  author	= {Schoenborn, O. and Desai, R.C.},
-  year		= {1999},
+  author	= {Schoenborn, Oliver and Desai, Rashmi C.},
+  volume        = 10,
+  pages         = {949--979},
+  publisher     = {Springer},
+  journal       = {Journal of statistical physics},
+  year		= 1999,
   comment	= {semilinear, Ginzburg-Landau equation},
   url		= {arXiv:cond-mat/9804237v2}
 }
