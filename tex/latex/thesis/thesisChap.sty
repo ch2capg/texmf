@@ -1,0 +1,53 @@
+%  Revision history
+%  --------------------------------------------------
+% 
+%       Revised by Christian Power September 2016
+%       Revised by Christian Power August 2016
+%       Originally written by Christian Power
+%            (power22c@gmail.com) 21.07.2015
+% 
+%  Costume chapter style for my thesis.
+%  Copyright (c) 2015 Christian Power.  All rights reserved.
+% ----------------------------------------------------------------------
+
+\ProvidesPackage{thesisChap}[2016/09/12 v0.1.0 Chapter for thesis]
+
+\RequirePackage{xcolor}
+\colorlet{chapter}{black!75} %
+\addtokomafont{chapter}{\color{chapter}} %
+
+\newcommand*{\spaceAfterChapter}{\vspace*{20ex}}
+
+\makeatletter% siehe De-TeX-FAQ
+\renewcommand*{\chapterformat}{%
+\begingroup% damit \unitlength-derung lokal bleibt
+\setlength{\unitlength}{1mm}%
+\begin{picture}(10,0)(0,5)%
+\setlength{\fboxsep}{0pt}%
+%\put(0,0){\framebox(20,30){}}%
+%\put(0,20){\makebox(20,20){\rule{20\unitlength}{20\unitlength}}}%
+\put(10,15){\line(1,0){\dimexpr %
+\textwidth-20\unitlength\relax\@gobble}}%
+\put(0,0){\makebox(10,20)[r]{%
+\fontsize{28\unitlength}{28\unitlength}\selectfont\textsf{I}%\thechapter
+\kern-.04em% Ziffer in der Zeichenzelle nach rechts schieben
+}}%
+\put(10,15){\makebox(\dimexpr %
+\textwidth-10\unitlength\relax\@gobble,\ht\strutbox\@gobble)[l]{%
+\ \normalsize\color{black}\chapapp~\thechapter\autodot %
+}}%
+\end{picture} % <-- Leerzeichen ist hier beabsichtigt!
+\endgroup %
+}
+% \makeatletter
+% \renewcommand*{\chapterheadstartvskip}{%
+%   {\setlength{\@tempdima}{\f@baselineskip}%
+%     \showthe\@tempdima
+%   \vspace*{5.0\@tempdima}}%
+% }
+% \renewcommand*{\chapterheadendvskip}{%
+%   {\setlength{\@tempdima}{\f@baselineskip}%
+%     \vspace{1.0\@tempdima
+%       \@plus .115\@tempdima \@minus .192\@tempdima}}%
+% }
+\makeatother
