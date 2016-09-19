@@ -1,0 +1,116 @@
+%  Revision history
+%  --------------------------------------------------
+% 
+%       Revised by Christian Power September 2016
+%       Revised by Christian Power August 2016
+%       Originally written by Christian Power
+%            (power22c@gmail.com) 21.07.2015
+% 
+%  Produce nice lines next to the theorems.
+%  Copyright (c) 2016 Christian Power.  All rights reserved.
+% ----------------------------------------------------------------------
+
+\ProvidesPackage{thesisThm}[2016/09/12 v0.1.0 Theorem for my thesis]
+
+\RequirePackage{amsthm}
+\RequirePackage{tikz}
+\RequirePackage[framemethod=tikz]{mdframed}
+
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+\global\mdfdefinestyle{satzmdf}{
+  outerlinewidth=0.4pt,
+  outerlinecolor=blue,
+  innerlinewidth=0.4pt,
+  innerlinecolor=blue,
+  middlelinewidth=1pt,
+  middlelinecolor=white,
+  bottomline=false,
+  topline=false,
+  rightline=false
+}
+\global\mdfdefinestyle{defimdf}{
+  outerlinewidth=0.4pt,
+  outerlinecolor=gray,
+  innerlinewidth=0.4pt,
+  innerlinecolor=gray,
+  middlelinewidth=1pt,
+  middlelinecolor=white,
+  bottomline=false,
+  topline=false,
+  rightline=false
+}
+
+% ----------------------------------------------------------------------
+\newtheoremstyle{satz}
+{-\topsep}                   %Space above
+{3ex}                   %Space below
+{\normalfont\itshape}           %Body font
+{}                      %Indent amount (empty = no indent,
+                          %\parindent = para indent)
+{\normalfont\sffamily\bfseries}  %Thm head font
+{.}                     %Punctuation after thm head
+{.5em}              %Space after thm head: " " = normal interword
+                          %space; \newline = linebreak
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+                          %Thm head spec (can be left empty, meaning
+                          %`normal')
+\newtheoremstyle{defi}
+{-\topsep}                   %Space above
+{3ex}                   %Space below
+{\normalfont}           %Body font
+{}                      %Indent amount (empty = no indent,
+                        %\parindent = para indent)
+{\normalfont\sffamily\bfseries}  %Thm head font
+{.}                     %Punctuation after thm head
+{.5em}              %Space after thm head: " " = normal interword
+                        %space; \newline = linebreak
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+                        %Thm head spec (can be left empty, meaning
+                        %`normal')
+\newtheoremstyle{defiNoFrame}
+{1ex}                   %Space above
+{3ex}                   %Space below
+{\normalfont}           %Body font
+{}                      %Indent amount (empty = no indent,
+                        %\parindent = para indent)
+{\normalfont\sffamily\bfseries}  %Thm head font
+{.}                     %Punctuation after thm head
+{.5em}              %Space after thm head: " " = normal interword
+                        %space; \newline = linebreak
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+                        %Thm head spec (can be left empty, meaning
+                        %`normal')
+% ------------------------------
+\theoremstyle{satz}
+\newtheorem{lemma}{Lemma}[section]
+\surroundwithmdframed[style=satzmdf]{lemma}
+\newtheorem{proposition}[lemma]{Proposition}
+\surroundwithmdframed[style=satzmdf]{proposition}
+\newtheorem{corollary}[lemma]{Corollary}
+\surroundwithmdframed[style=satzmdf]{corollary}
+\newtheorem{theorem}[lemma]{Theorem}
+\surroundwithmdframed[style=satzmdf]{theorem}
+\theoremstyle{defi}
+\newtheorem{definition}[lemma]{Definition}
+\surroundwithmdframed[style=defimdf]{definition}
+% \newtheorem{assumption}[lemma]{Assumption}
+% \surroundwithmdframed[style=defimdf,
+% outerlinecolor=red,
+% innerlinecolor=red]{assumption}
+\theoremstyle{defiNoFrame}
+\newtheorem{remark}[lemma]{Remark}
+\newtheorem{problem}[lemma]{Problem}
+\newtheorem{assumption}[lemma]{Assumption}
+
+% ----------------------------------------------------------------------
+% My proof enviroment
+\makeatletter
+\renewenvironment{proof}[1][\bfseries\sffamily\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+        \sffamily\bfseries
+    #1\@addpunct{.}]\ignorespaces}{\popQED\endtrivlist\@endpefalse}
+\makeatother
+\renewcommand{\qedsymbol}{$\blacksquare$}
