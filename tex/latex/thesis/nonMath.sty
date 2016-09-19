@@ -1,0 +1,34 @@
+%  Revision history
+%  --------------------------------------------------
+%
+%       Revised by Christian Power September 2016
+%       Revised by Christian Power August 2016
+%       Originally written by Christian Power
+%            (power22c@gmail.com) 17.08.2015
+% 
+%  Add packages, which improves the resulting pdf output.  Everything should be
+%  usable for a non math document.  
+%  Copyright (c) 2016 Christian Power.  All rights reserved.
+% ----------------------------------------------------------------------
+
+\ProvidesPackage{nonMath}[2016/09/14 v0.2.0 non math related document commands]
+
+% Font document non-math related
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{lmodern}
+\RequirePackage{enumitem}
+\RequirePackage[colorlinks=true,pdfpagelabels]{hyperref}
+\RequirePackage{xifthen}
+\RequirePackage{scrlayer-scrpage}
+\RequirePackage{booktabs}
+% \RequirePackage{tabularx}
+% Use this in your code
+% \automark[section]{chapter}
+% \lohead{\pagemark}
+% \cohead{}
+% \rohead{\headmark}
+% \lehead{\headmark}
+% \cehead{}
+% \rehead{\pagemark}
+% \cofoot{}
