@@ -1,0 +1,36 @@
+%  Revision history
+%  --------------------------------------------------
+%
+%       Revised by Christian Power September 2016 
+%       Originally written by Christian Power
+%            (power22c@gmail.com) 2015
+%
+%  Standard style for my LaTeX slides.
+%  Copyright (c) 2016 Christian Power.  All rights reserved.
+%  ----------------------------------------------------------------------
+
+\ProvidesPackage{capg_slides}[2016/09/19 v0.0.1 slide style]
+
+\setbeamercovered{transparent=11.09}
+\beamertemplatenavigationsymbolsempty
+% costume theme
+\makeatletter
+\setbeamertemplate{footline}{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.3333\paperwidth,ht=2.25ex,dp=1ex,center]{author
+      in head/foot}%
+    \usebeamerfont{author in head/foot}\insertsectionhead
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{title in
+    head/foot}%
+    \usebeamerfont{title in head/foot}\insertsubsectionhead
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.19\paperwidth,ht=2.25ex,dp=1ex,right]{date in
+      head/foot}%
+    % \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
