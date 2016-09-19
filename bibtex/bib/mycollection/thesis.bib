@@ -3,13 +3,31 @@
 @preamble{ "\makeatother" }
 
 author names
+==================================================
+@string{and = " and "}
 @string{lubich = "Lubich, {\relax Ch}ristian"}
 @string{akrivis = "Akrivis, Georgios"}
-@string{and = " and "}
-journal names
-#string{jmb = "Journal of Mathematical Biology"}
-@string{jmb = "J. Math. Biol."}
+@string{dziuk = "Dziuk, Gerhard"}
+@string{mansour = "Mansour, Dhia E."}
+@string{ostermann = "Ostermann, Alexander"}
 
+journal names
+==================================================
+"Journal of Mathematical Biology"
+@string{jmb = "J. Math. Biol."}
+@string{jmbpub = "Springer"}
+@string{jmbad = "Heidelberg"}
+@string{jmbissn = "0303-6812"}
+"IMA Journal of  Numerical Analysis"
+@string{imajna = "IMA J. Numer. Anal."}
+@string{imajnapub = "Oxford Univ. Press"}
+@string{imajnaad = "Oxford"}
+@string{imajnaissn = "0272-4979"}
+"Mathematics of Computation"
+@string{mc = "Math. Comp."}
+@string{mcpub = "Amer. Math. Soc."}
+@string{mcad = "Providence, RI."}
+@string{mcissn = "0025-5718"}
 
 @Article{	  1975_ddw,
   author	= {Douglas, {Jr.J.} and Dupont, {T.} and Wahlbin, {L.}},
@@ -186,7 +204,7 @@ journal names
 
 @Article{	  barrettgarckenurnberg,
   title		= {On the parametric finite element approximation of evolving
-		  hypersurfaces in R3},
+		  hypersurfaces in {\(\R^3\)}},
   author	= {Barrett, J.~W. and Garcke, H. and N{\"u}rnberg,
 		  R.},
   journal	= {Journal of Computational Physics},
@@ -527,18 +545,21 @@ journal names
   pages		= {203--236.},
   volume	= {15},
   comment	= {semilinear},
-  url		= {{arXiv:1307.1056v1}}
+  arxiv         = {1307.1056v1}
 }
 
 @Article{	  dziuklubichmansour_rksurf,
   title		= {{R}unge--{K}utta time discretization of parabolic
 		  differential equations on evolving surfaces},
-  author	= {Dziuk, G. and Lubich, {Ch.} and Mansour, D.~E.},
-  journal	= {IMA Journal of Numerical Analysis},
-  year		= {2012},
-  number	= {2},
+  author	= dziuk # and # lubich # and # mansour,
+  journal	= imajna,
+  publisher     = imajnapub,
+  address       = imajnaad,
+  issn          = imajnaissn,
+  year		= 2012,
+  number	= 2,
   pages		= {394--416.},
-  volume	= {32},
+  volume	= 32,
   doi		= {10.1093/imanum/drr017}
 }
 
@@ -797,14 +818,18 @@ journal names
   comment	= {flud flow, Navier--Stokes}
 }
 
+duplicate label: lubichostermann_rk
 @Article{	  lubich1995,
   title		= {{R}unge--{K}utta approximation of quasilinear parabolic
 		  equations},
-  author	= {Ch. Lubich and A. Ostermann},
-  journal	= {Math. Comp.},
-  year		= {1995},
+  author	= lubich # and # ostermann, 
+  journal	= mc,
+  publisher     = mcpub,
+  address       = mcad,
+  issn          = mcissn,
+  year		= 1995,
   pages		= {601--627},
-  volume	= {64},
+  volume	= 64,
   doi		= {10.1090/S0025-5718-1995-1284670-0}
 }
 
@@ -849,17 +874,6 @@ journal names
   pages		= {1365--1385.},
   volume	= {33},
   doi		= {10.1093/imanum/drs044}
-}
-
-@Article{	  lubichostermann_rk,
-  title		= {{R}unge--{K}utta approximation of quasilinear parabolic
-		  equations},
-  author	= {Lubich, Ch. and Ostermann, A.},
-  journal	= {Mathematics of Computation},
-  year		= {1995},
-  pages		= {601--627.},
-  volume	= {64.},
-  doi		= {10.1090/S0025-5718-1995-1284670-0}
 }
 
 @Article{	  madzvamuse2014exhibiting,
