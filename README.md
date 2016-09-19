@@ -4,7 +4,7 @@ texmf
 Abstract
 ----------------------------------------------------------------------
 
-This files contains BibTeX data bases for my math papers and LaTeX style
+This repository contains BibTeX data bases for my math papers and LaTeX style
 packages for my thesis.
 
 Author
