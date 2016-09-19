@@ -1,0 +1,206 @@
+%  Revision history
+%  --------------------------------------------------
+%
+%       Revised by Christian Power September 2016
+%       Revised by Christian Power August 2016
+%       Originally written by Christian Power
+%            (power22c@gmail.com) 17.08.2016
+% 
+%  Copyright (c) 2016 Christian Power.  All rights reserved.
+% ----------------------------------------------------------------------
+
+\ProvidesPackage{myMathSymb}[2016/09/14 v0.4.1 math macros]
+
+\newcommand*\Q{\mathds{Q}}
+\newcommand*\Z{\mathds{Z}}
+\newcommand*\R{\mathds{R}}
+\newcommand*\N{\mathds{N}}
+\newcommand*\C{\mathds{C}}
+\newcommand*\K{\mathds{K}}
+\newcommand*\id{\mathds{1}}
+\newcommand*\ima{\mathrm{i}}
+\newcommand*\dotarg{\:\cdot\:}
+\newcommand*\conv\ast
+\newcommand*\impr\Rightarrow
+\newcommand*\impl\Leftarrow
+\newcommand*\aqui\Leftrightarrow
+\newcommand*\del\partial
+\newcommand*\dif{\mathop{}\!\mathrm{d}}
+\newcommand*\Dif{\mathop{}\!\mathrm{D}}
+\newcommand*\laplace\Delta
+\newcommand*\csubset\Subset
+\newcommand*\csupset\Supset
+\newcommand*\osubset{\subset_{\mathrm{o}}}
+\newcommand*\cosubset{\Subset_{\mathrm{o}}}
+\newcommand*\boundary\del
+\newcommand*\union\cup
+\newcommand*\bunion\bigcup
+\newcommand*\inters\cap
+\newcommand*\binters\bigcap
+% ----------------------------------------------------------------------
+\newcommand*\ov[1]{\overline{#1}}
+\newcommand*\ul[1]{\underline{#1}}
+\newcommand*\fft[1]{\widehat{#1}}
+\newcommand*\ifft[1]{\widecheck{#1}}
+\newcommand*\ifBlankDot[1]{\ifblank{#1}{\dotarg}{#1}}
+% ----------------------------------------------------------------------
+\DeclareMathOperator\gl{GL}
+\DeclareMathOperator\im{Im}
+\DeclareMathOperator\rg{rg}
+\DeclareMathOperator\mat{Mat}
+\DeclareMathOperator\grad{grad}
+\DeclareMathOperator\Div{div}
+\DeclareMathOperator\supp{supp}
+\DeclareMathOperator\graph{graph}
+\DeclareMathOperator\pr{pr}
+\DeclareMathOperator\diag{diag}
+\DeclareMathOperator\codim{codim}
+\DeclareMathOperator\sym{sym}
+\DeclareMathOperator\jac{jac}
+\DeclareMathOperator\hess{hess}
+\DeclareMathOperator\tr{trace}
+\DeclareMathOperator\sgn{sgn}
+\DeclareMathOperator\const{const}
+% ----------------------------------------------------------------------
+\DeclarePairedDelimiterX\abs[1]\lvert\rvert{
+  \ifblank{#1}{\dotarg}{#1}
+}
+\DeclarePairedDelimiterX\norm[1]\lVert\rVert{
+  \ifblank{#1}{\dotarg}{#1}
+}
+\DeclarePairedDelimiterXPP\labs[2]{}\lvert\rvert{
+  \ifblank{#2}{}{_{#2}}
+}{
+  \ifblank{#1}{\dotarg}{#1}
+}
+\DeclarePairedDelimiterXPP\lnorm[2]{}\lVert\rVert{
+  \ifblank{#2}{}{_{#2}}
+}{
+  \ifblank{#1}{\dotarg}{#1}
+}
+\DeclarePairedDelimiterXPP\lNormP[3]{}\lVert\rVert{_{#2}^{#3}}{#1}
+\DeclarePairedDelimiterX\deli[1](){  % Delimiter
+  \ifblank{#1}{\dotarg}{#1}
+}
+\let\args\deli  % Arguments (usually with round brackets)
+\DeclarePairedDelimiterX\cbr[1]\{\}{
+  \ifblank{#1}{\dotarg}{#1}
+}
+\DeclarePairedDelimiterX\sbr[1][]{
+  \ifblank{#1}{\dotarg}{#1}
+}
+\DeclarePairedDelimiterX\abr[1]\langle\rangle{
+  \ifblank{#1}{\dotarg}{#1}
+}
+\providecommand\given{}  % just to make sure it exists
+% can be useful to refer to this outside \Set
+\newcommand*\SetSymbol[1][]{
+  \nonscript\:#1\vert
+  \allowbreak
+  \nonscript\:
+  \mathopen{}}
+\DeclarePairedDelimiterX\Set[1]\{\}{%
+  \renewcommand\given{\SetSymbol[\delimsize]}
+  #1
+}
+\providecommand\mult{}  % just to make sure it exists
+\newcommand*\BraketSymbol[1][]{
+  \nonscript\,#1\vert
+  \allowbreak
+  \nonscript\,
+  \mathopen{}}
+\DeclarePairedDelimiterX\braket[2]\langle\rangle{
+  \renewcommand\mult{\BraketSymbol[\delimsize]}
+  \ifblank{#1}{\dotarg}{#1}\,\delimsize\vert\,\mathopen{}
+  \ifblank{#2}{\dotarg}{#2}
+}
+\DeclarePairedDelimiterX\triBraket[3]\langle\rangle{
+  #1\,\delimsize\lvert\,\mathopen{}#2\,\delimsize\rvert\,\mathopen{}#3
+}
+% --------------------
+\DeclareDocumentCommand\od{O {} m m}{
+  \frac{\dif\ifblank{#1}{}{^{#1}} #2}{\dif #3\ifblank{#1}{}{^{#1}}}
+}
+\DeclareDocumentCommand\evalOd{O {} m m m}{
+  \eval*{
+    \frac{\dif\ifblank{#1}{}{^{#1}} #2}{\dif #3\ifblank{#1}{}{^{#1}}}
+  }{#4}
+}
+\DeclareDocumentCommand\pd{O {} m m}{
+  \frac{\del\ifblank{#1}{}{^{#1}} #2}{\del #3\ifblank{#1}{}{^{#1}}}
+}
+\DeclareDocumentCommand\evalPd{O {} m m m}{
+  \eval*{
+    \frac{\del\ifblank{#1}{}{^{#1}} #2}{\del #3\ifblank{#1}{}{^{#1}}}
+  }{#4}
+}
+\DeclareDocumentCommand\sobolev{O{}m}{
+  \ifblank{#1}{H^{#2}}{W^{#2,#1}}
+}
+% \DeclareDocumentCommand{\Lnorm}{ O{} O{2} m}{ 
+%   \lVert #3\rVert_{ 
+%     L^{#2}\ifthenelse{\isempty{#1}}{}{(#1)}
+%   }
+% }
+% \DeclareDocumentCommand{\Wnorm}{ O{} O{k,p} m}{
+%   \lVert #3\rVert_{
+%     W^{#2}\ifthenelse{\isempty{#1}}{}{(#1)}
+%   }
+% }
+% \DeclareDocumentCommand{\Hnorm}{ O{} O{k} m }{
+%   \lVert #3\rVert_{
+%     H^{#2}\ifthenelse{\isempty{#1}}{}{(#1)}
+%   }
+% }
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+% Costume \eval command.  Found this on TeX exchange 
+\ExplSyntaxOn
+\DeclareDocumentCommand{\xDeclarePairedDelimiter}{mmmO{}}
+ {
+  \NewDocumentCommand{#1}{sO{}m}
+   {
+    \IfBooleanTF{##1}
+     {
+      \egreg_paired_delimiter_expand:nnnn {#2}{#3}{##3}{#4}
+     }
+     {
+      \egreg_paired_delimiter_fixed:nnnnn {##2}{#2}{#3}{##3}{#4}
+     }
+   }
+ }
+\cs_new_protected:Npn \egreg_paired_delimiter_expand:nnnn #1 #2 #3 #4
+ {% Fix the spacing issue with \left and \right (D. Arsenau, P. Stephani and
+  % H. Oberdiek)
+  \mathopen{}
+  \mathclose\c_group_begin_token
+   \left#1
+   \str_if_eq:nnT { . } { #1 } { \kern-\nulldelimiterspace }
+   #3
+   \group_insert_after:N \c_group_end_token
+   \right#2
+   \tl_if_empty:nF {#4} { \c_math_subscript_token {#4} }
+ }
+\cs_new_protected:Npn \egreg_paired_delimiter_fixed:nnnnn #1 #2 #3 #4 #5
+ {
+  \str_if_eq:nnF {.} { #2 } { \mathopen{#1#2} }
+  #4
+  \mathclose{#1#3}
+  \tl_if_empty:nF {#5} { \c_math_subscript_token {#5} }
+ }
+\ExplSyntaxOff
+
+% the final optional argument to \xDeclarePairedDelimiter
+% is a subscript to the right fence
+\xDeclarePairedDelimiter{\xeval}{.}{\rvert}[\evaluateat]
+\newcommand{\evaluateat}{}
+\NewDocumentCommand{\eval}{somm}{%
+  \begingroup
+  \renewcommand{\evaluateat}{#4}%
+  \IfBooleanTF{#1}
+    {\xeval*{#3}}
+    {\IfNoValueTF{#2}{\xeval{#3}}{\xeval[#2]{#3}}}%
+  \endgroup
+}
+% ----------------------------------------------------------------------
