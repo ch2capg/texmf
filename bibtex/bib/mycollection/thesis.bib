@@ -10,9 +10,10 @@
 
 @preamble{ "\makeatletter" }
 @preamble{ "\@ifundefined{url}{\newcommand*\url[1]{\texttt{#1}}}{}" }
-@preamble{ "\@ifundefined{R}{\newcommand*\R{\mathbf{R}}}"}
-@preamble{ "\@ifundefined{lebesgue}{\newcommand*\lebesgue{L}}"}
+@preamble{ "\@ifundefined{R}{\newcommand*\R{\mathbf{R}}}{}"}
+@preamble{ "\@ifundefined{lebesgue}{\newcommand*\lebesgue{L}}{}"}
 @preamble{ "\makeatother" }
+
 author names
 ==================================================
 @string{and = " and "}
@@ -37,6 +38,11 @@ author names
 @string{kovacs = "Kov{\'a}cs, Bal{\'a}zs"}
 @string{adams = "Adams, Robert A."}
 @string{fournier = "Fournier, John JF."}
+@string{alphonse = "Alphonse, Amal"}
+@string{aubin = "Aubin, Thierry"}
+@string{barrett = "Barrett, John W."}
+@string{garcke = "Garcke, Harald"}
+@string{nuernberg = "N{\"u}rnberg, Robert"}
 
 publisher name
 ==================================================
@@ -84,7 +90,7 @@ journal names
 
 old label:
 1975_ddw
-@Article{1974_ddw,
+@Article{1974_douglasEtAl,
   author	= douglas # and # dupont # and # wahlbin,
   title		= "The Stability in {\(\lebesgue^{q}\)} of the
                   {\(\lebesgue^{2}\)}-Projection into Finite Element Function Spaces",
@@ -104,7 +110,7 @@ old label:
 
 old label:
 1980_stw
-@Article{1980_stw,
+@Article{1980_schatzEtAl,
   author	= schatz # and # thomee # and # wahlbin,
   title		= {Maximum {N}orm {S}tability and {E}rror {E}stimates in
 		   {P}arabolic {F}inite {E}lement {E}quations},
@@ -124,7 +130,7 @@ old label:
 
 old label:
 2004james_lowengrub
-@Article{2004_jl,
+@Article{2004_jamesLowengrub,
   author	= james # and # lowengrub,
   title		= {A surfactant-conserving volume-of-fluid method for
 		  interfacial flows with insoluble surfactant},
@@ -142,7 +148,10 @@ old label:
   optannote	= {}
 }
 
-@Book{ 2006_ch,
+old label:
+2006_ch
+chavel
+@Book{2006_chavel,
   author	= chavel,
   alteditor	= {},
   title		= "Riemannian {G}eometry: {A} {M}odern {I}ntroduction",
@@ -163,7 +172,7 @@ old label:
 
 old label:
 2010elliott_stinner
-@Article{2010_es,
+@Article{2010_elliottStinner,
   author	= elliott # and # stinner,
   title		= {Modeling and computation of two phase geometric
 		   biomembranes using surface finite elements},
@@ -183,7 +192,7 @@ old label:
 
 old label:
 2014nonlinear
-@article{2016_kp,
+@article{2016_kovacsPower,
   author	= kovacs # and # power,
   title		= "Error analysis for full discretizations of quasilinear
                    parabolic problems on evolving surfaces",
@@ -202,7 +211,7 @@ old label:
 }
 old label:
 adams
-@Book{2003a,
+@Book{2003_adamsFournier,
   title		= "Sobolev spaces",
   booktitle	= "Sobolev spaces",
   author	= adams # and # fournier,
@@ -211,48 +220,65 @@ adams
   volume	= 140
 }
 
-@Article{	  akrivislubich_quasilinbdf,
+old label:
+akrivislubich_quasilinbdf
+@Article{2015_akrivisLubich,
   title		= {Fully implicit, linearly implicit and implicit--explicit
-		  backward difference formulae for quasi-linear parabolic
-		  equations},
+		   backward difference formulae for quasi-linear parabolic
+		   equations},
   author	= akrivis # and # lubich,
-  journal	= {Numerische Mathematik},
-  year		= {2015},
-  pages		= {1--23},
-  publisher	= {Springer}
+  journal	= nm,
+  publisher	= nmpub,
+  address	= nmad,
+  issn		= nmissn,
+  year		= 2015,
+  pages		= {1--23}
 }
 
-@Article{	  alediscrete,
-  title		= {Higher--oder time discretizations with {ALE} finite
-		  elements for parabolic problems on evolving surfaces},
-  author	= {Kov\'{a}cs, B. and {Power Guerra}, {Ch.A.}},
-  journal	= {(submitted to IMA Journal of Numerical Analysis)},
-  year		= {2014},
-  note		= {arXiv:1410.0486},
-  comment	= {{http://na.uni-tuebingen.de/~power/papers/ALEsurface.pdf}}
+old label:
+alediscrete
+@unpublished{2014_kovacsPower,
+  title		= "Higher--oder time discretizations with {ALE} finite
+		   elements for parabolic problems on evolving surfaces",
+  author	= kovacs # and # power,
+  journal	= imajna,
+  publisher	= imajnapub,
+  address	= imajnaad,
+  issn		= imajnaissn,
+  year		= 2014,
+  arxiv		= "1410.0486",
+  note		= "Submitted",
+  comment	= {\url{http://na.uni-tuebingen.de/~power/papers/ALEsurface.pdf}}
 }
 
-@Article{	  alphonseelliottstinner,
-  title		= {An abstract frame\-work for parabolic {PDE}s on evolving
-		  spaces},
-  author	= {Alphonse, A. and Elliott, C.~M. and Stinner, B.},
-  journal	= {arXiv:1403.4500v1},
-  year		= {2014}
+old label:
+alphonseelliottstinner
+@unpublished{2014_alphonesEtAl,
+  title		= "An abstract frame\-work for parabolic {PDE}s on evolving
+		   spaces",
+  author	= alphonse # and # elliott # and # stinner,
+  arxiv		= "1403.4500v1",
+  year		= 2014,
+  note		= "Preprint"
 }
 
-@Book{		  aubinbook,
-  title		= {Some Nonlinear Problems in Riemannian Geometry},
-  author	= {Aubin, T.},
-  publisher	= {Springer},
-  year		= {1998},
-  edition	= {first},
-  series	= {Springer Monographs in Mathematics}
+old label:
+aubinbook
+@Book{1998_aubin,
+  title		= "Some {N}onlinear {P}roblems in {R}iemannian {G}eometry",
+  booktitle	= "Some {N}onlinear {P}roblems in {R}iemannian {G}eometry",
+  author	= aubin,
+  publisher	= "Springer",
+  year		= 1998,
+  series	= "Springer Monographs in Mathematics",
+  isbn		= "3-540-60752-8"
 }
 
 old labels:
 barreira2011
 barreiraelliottmadzvamuse_patternformation
-@Article{	  barreira2011surface,
+barreira2011surface
+@Article{2011_barreiraEtAl,
   title		= "The surface finite element method for pattern formation on
 		  evolving biological surfaces",
   author	= barreira # and # elliott # and # madzvamuse,
@@ -264,20 +290,23 @@ barreiraelliottmadzvamuse_patternformation
   number	= 6,
   pages		= {1095--1119},
   year		= 2011,
-  doi		= {10.1007/s00285-011-0401-0}
+  doi		= "10.1007/\-s00285-011-0401-0"
 }
 
-@Article{	  barrettgarckenurnberg,
+old label:
+barrettgarckenurnberg
+@Article{2008_barretEtAl,
   title		= {On the parametric finite element approximation of evolving
 		  hypersurfaces in {\(\R^3\)}},
-  author	= {Barrett, J.~W. and Garcke, H. and N{\"u}rnberg,
-		  R.},
-  journal	= {Journal of Computational Physics},
-  volume	= {227},
-  number	= {9},
+  author	= barrett # and # garcke # and # nuernberg,
+  journal	= jcp,
+  publisher	= jcppub,
+  address	= jcpad,
+  issn		= jcpissn,
+  volume	= 227,
+  number	= 9,
   pages		= {4281--4307},
-  year		= {2008},
-  publisher	= {Elsevier}
+  year		= 2008
 }
 
 @Article{	  bonito2013,
@@ -382,13 +411,6 @@ barreiraelliottmadzvamuse_patternformation
   pages		= {387--423},
   volume	= {42},
   publisher	= {Springer}
-}
-
-@Book{		  chavel,
-  title		= {Riemmanian Geometry: A Modern Introduction},
-  author	= {Chavel, I.},
-  publisher	= {Cambrige University Press},
-  year		= {1993}
 }
 
 @Article{	  chen2002phase,
@@ -557,10 +579,10 @@ barreiraelliottmadzvamuse_patternformation
   title		= {Finite element methods for surface {PDE}s},
   author	= {Dziuk, G. and Elliott, C.~M.},
   journal	= {Acta Numerica},
-  year		= {2013},
+  year		= 2013,
   pages		= {289--396.},
-  volume	= {22},
-  doi		= {10.1017/S0962492913000056}
+  volume	= 22,
+  doi		= {10.1017/\allowbreak S0962492913000056}
 }
 
 @Article{	  dziukelliott_esfem,
@@ -991,7 +1013,7 @@ duplicate label: lubichostermann_rk
 @Article{	  memoli,
   title		= {Implicit brain imaging},
   author	= {M\'{e}moli, Facundo and Sapiro, Guillermo and Thompson, Paul},
-  doi           = {10.1016/j.neuroimage.2004.07.072},
+  doi           = {10.1016/\allowbreak j.neuroimage.\allowbreak 2004.07.072},
   journal       = {NeuroImage},
   year          = 2004,
   volume        = 23,
