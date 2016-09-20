@@ -1,7 +1,7 @@
 %  Revision history
 %  --------------------------------------------------
 %
-%       Modified by Christian Power Sepember 2016
+%       Modified by Christian Power September 2016
 %       Originally written by Howard Trickey and Oren Patashnik 
 %            abbrv.bst, release 08.12.2010
 %
@@ -190,7 +190,7 @@ FUNCTION {field.or.null}
 FUNCTION {emphasize}
 { duplicate$ empty$
     { pop$ "" }
-    { "{\em " swap$ * "}" * }
+    { "\emph{ " swap$ * "}" * }
   if$
 }
 
@@ -549,14 +549,13 @@ FUNCTION {format.incoll.inproc.crossref}
   " \cite{" * crossref * "}" *
 }
 
-% FUNCTION {format.arxiv}
-% {
-%   s :=
-%   s empty$
-%   { "" }
-%   { " arXiv- " * s * "." }
-%   if$
-% }
+FUNCTION {format.arxiv}
+{
+  arxiv missing$
+  { "" }
+  { "arXiv:" arxiv * }
+  if$
+}
 
 FUNCTION {article}
 { output.bibitem
@@ -575,13 +574,8 @@ FUNCTION {article}
   if$
   new.block
   note output
-  arxiv missing$
-  {}
-  {
-    new.block
-    "arXiv:" arxiv * output
-  }
-  if$
+  new.block
+  format.arxiv output
 %   doi missing$
 %   {}
 %   {
@@ -606,7 +600,7 @@ FUNCTION {book}
   new.block
   format.btitle "title" output.check
   crossref missing$
-    { format.bvolume output
+    { % format.bvolume output
       new.block
       format.number.series output
       new.sentence
@@ -870,6 +864,8 @@ FUNCTION {unpublished}
   new.block
   note "note" output.check
   format.date output
+  new.block
+  format.arxiv output
   fin.entry
 }
 
