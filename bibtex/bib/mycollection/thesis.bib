@@ -1,8 +1,18 @@
-% 
-@preamble{ "\makeatletter" }
-@preamble{ "\@ifundefined{url}{\def\url#1{\texttt{#1}}}{}" }
-@preamble{ "\makeatother" }
+%  Revision history
+%  --------------------------------------------------
+%
+%       Originally written by Christian Power
+%            (power22c at gmail.com) September 2016
+%
+%  Data base for my thesis publications.  Heavy usage of macros.  
+%  Copyright (c) 2016 Christian Power.  All rights reserved.
+% ----------------------------------------------------------------------
 
+@preamble{ "\makeatletter" }
+@preamble{ "\@ifundefined{url}{\newcommand*\url[1]{\texttt{#1}}}{}" }
+@preamble{ "\@ifundefined{R}{\newcommand*\R{\mathbf{R}}}"}
+@preamble{ "\@ifundefined{lebesgue}{\newcommand*\lebesgue{L}}"}
+@preamble{ "\makeatother" }
 author names
 ==================================================
 @string{and = " and "}
@@ -11,6 +21,27 @@ author names
 @string{dziuk = "Dziuk, Gerhard"}
 @string{mansour = "Mansour, Dhia E."}
 @string{ostermann = "Ostermann, Alexander"}
+@string{elliott = "Elliott, Charles M."}
+@string{barreira = "Barreira, Raquel"}
+@string{madzvamuse = "Madzvamuse, Anotida"}
+@string{douglas = "Douglas, Jr, Jim"}
+@string{dupont = "Dupont, Todd"}
+@string{wahlbin = "Wahlbin, Lars B."}
+@string{schatz = "Schatz, Alfred H."}
+@string{thomee = "Thom{\'e}e, Vidar"}
+@string{james = "James, Ashley J."}
+@string{lowengrub = "Lowengrub, John"}
+@string{chavel = "Chavel, Isaac"}
+@string{stinner = "Stinner, Bj{\"o}rn"}
+@string{power = "Power Guerra, {\relax Ch}ristian Andreas"}
+@string{kovacs = "Kov{\'a}cs, Bal{\'a}zs"}
+@string{adams = "Adams, Robert A."}
+@string{fournier = "Fournier, John JF."}
+
+publisher name
+==================================================
+@string{cambridge = "Cambridge university press"}
+@string{academic = "Academic press"}
 
 journal names
 ==================================================
@@ -29,58 +60,96 @@ journal names
 @string{mcpub = "Amer. Math. Soc."}
 @string{mcad = "Providence, RI."}
 @string{mcissn = "0025-5718"}
+"Numerische Mathematik"
+@string{nm = "Numer. Math."}
+@string{nmpub = "Springer"}
+@string{nmad = "Heidelberg"}
+@string{nmissn = "0029-599X"}
+"Communications on Pure and Applied Mathematics"
+@string{cpam = "Commun. Pure Appl. Anal."}
+@string{cpampub = "Am. Inst. Math. Sci. (AIMS)"}
+@string{cpamad = "Springfield, MO."}
+@string{cpamissn = "1534-0392"}
+"Journal of Computational Physics"
+@string{jcp = "J. Comput. Phys."}
+@string{jcppub = "Elsevier"}
+@string{jcpad = "Amsterdam"}
+@string{jcpissn = "0021-9991"}
+"Numerical Methods for Partial Differential Equations.  An International Journal."
+@string{nmpde = "Numer. Methods Partial Differential Equations"}
+@string{nmpdepub = "Wiley"}
+@string{nmpdead = "Hoboken, NJ."}
+@string{nmpdeissn = "0749-159X"}
+======================================================================
 
-@Article{	  1975_ddw,
-  author	= {Douglas, {Jr.J.} and Dupont, {T.} and Wahlbin, {L.}},
-  title		= {The Stability in {$L^{q}$} of the {$L^{2}$}-Projection
-		  into Finite Element Function Spaces},
-  journal	= {Numer. Math.},
-  year		= {1975},
+old label:
+1975_ddw
+@Article{1974_ddw,
+  author	= douglas # and # dupont # and # wahlbin,
+  title		= "The Stability in {\(\lebesgue^{q}\)} of the
+                  {\(\lebesgue^{2}\)}-Projection into Finite Element Function Spaces",
+  journal	= nm,
+  publisher	= nmpub,
+  address	= nmad,
+  issn		= nmissn,
+  year		= 1974,
   optkey	= {},
-  volume	= {23},
-  optnumber	= {},
+  volume	= 23,
+  number	= 3,
   pages		= {193--197},
   optmonth	= {},
   optnote	= {},
   optannote	= {}
 }
 
-@Article{	  1980_stw,
-  author	= {Schatz, {A.H.} and Thom{\'e}e, {V.} and Wahlbin, {L.B.}},
-  title		= {Maximum Norm Stability and Error Estimates in Parabolic
-		  Finite Element Equations},
-  journal	= {Communications in Pure and Applied Mathematics},
-  year		= {1980},
+old label:
+1980_stw
+@Article{1980_stw,
+  author	= schatz # and # thomee # and # wahlbin,
+  title		= {Maximum {N}orm {S}tability and {E}rror {E}stimates in
+		   {P}arabolic {F}inite {E}lement {E}quations},
+  journal	= cpam,
+  publisher	= cpampub,
+  address	= cpamad,
+  issn		= cpamissn,
+  year		= 1980,
   optkey	= {},
-  volume	= {XXXIII},
-  optnumber	= {},
+  volume	= 33,
+  number	= 3,
   pages		= {265--304},
   optmonth	= {},
   optnote	= {},
   optannote	= {}
 }
 
-@Article{	  2004james_lowengrub,
-  author	= {James, A. and Lowengrub, J.},
+old label:
+2004james_lowengrub
+@Article{2004_jl,
+  author	= james # and # lowengrub,
   title		= {A surfactant-conserving volume-of-fluid method for
 		  interfacial flows with insoluble surfactant},
-  journal	= {J. Comput. Phys.},
-  year		= {2004},
+  journal	= jcp,
+  publisher	= jcppub,
+  address	= jcpad,
+  issn		= jcpissn,
+  year		= 2004,
   optkey	= {},
-  optvolume	= {},
-  optnumber	= {},
-  optpages	= {},
+  volume	= 201,
+  number	= 2,
+  pages		= {685--722},
   optmonth	= {},
   optnote	= {},
   optannote	= {}
 }
 
-@Book{		  2006_ch,
-  author	= {Chavel, I.},
+@Book{ 2006_ch,
+  author	= chavel,
   alteditor	= {},
-  title		= {Riemannian Geometry, A Modern Introduction},
-  publisher	= {Cambridge},
-  year		= {2006},
+  title		= "Riemannian {G}eometry: {A} {M}odern {I}ntroduction",
+  booktitle	= "Riemannian {G}eometry: {A} {M}odern {I}ntroduction",
+  publisher	= cambridge,
+  year		= 2006,
+  isbn		= "0-521-48578-9",
   optkey	= {},
   optvolume	= {},
   optnumber	= {},
@@ -92,44 +161,54 @@ journal names
   optannote	= {}
 }
 
-@Article{	  2010elliott_stinner,
-  author	= {Elliott, {C.M.} and Stinner, B.},
+old label:
+2010elliott_stinner
+@Article{2010_es,
+  author	= elliott # and # stinner,
   title		= {Modeling and computation of two phase geometric
-		  biomembranes using surface finite elements},
-  journal	= {J. Comput. Phys.},
-  year		= {2010},
+		   biomembranes using surface finite elements},
+  journal	= jcp,
+  publisher	= jcppub,
+  address	= jcpad,
+  issn		= jcpissn,
+  year		= 2010,
   optkey	= {},
-  optvolume	= {},
-  optnumber	= {},
-  optpages	= {},
+  volume	= 229,
+  number	= 18,
+  pages		= {6585--6612},
   optmonth	= {},
   optnote	= {},
   optannote	= {}
 }
 
-@Article{	  2014nonlinear,
-  author	= {Kov\'{a}cs, B. and {Power Guerra}, {Ch.A.}},
-  title		= {Higher--order time discretizations with evolving surface
-		  finite elements for nonlinear parabolic problems on
-		  evolving surfaces},
-  journal	= {(submitted to Numerical Methods for Partial Differential
-		  Equations)},
-  year		= {2014},
+old label:
+2014nonlinear
+@article{2016_kp,
+  author	= kovacs # and # power,
+  title		= "Error analysis for full discretizations of quasilinear
+                   parabolic problems on evolving surfaces",
+  journal	= nmpde,
+  publisher	= nmpdepub,
+  address	= nmpdead,
+  issn		= nmpdeissn,
+  year		= 2016,
   optkey	= {},
-  optvolume	= {},
-  optnumber	= {},
-  optpages	= {},
+  volume	= 32,
+  number	= 4,
+  pages		= "1200--1231",
   optmonth	= {},
-  note		= {arXiv:1503.08990},
-  optannote	= {},
+  arxiv		= "1503.08990",
   comment	= {\url{http://na.uni-tuebingen.de/~power/papers/nonlinear.pdf}}
 }
-
-@Book{	  adams,
-  title		= {Sobolev Spaces},
-  author	= {Adams, R. and Fournier, J.},
-  publisher	= {Academic Press},
-  year		= 2003
+old label:
+adams
+@Book{2003a,
+  title		= "Sobolev spaces",
+  booktitle	= "Sobolev spaces",
+  author	= adams # and # fournier,
+  publisher	= academic,
+  year		= 2003,
+  volume	= 140
 }
 
 @Article{	  akrivislubich_quasilinbdf,
@@ -170,36 +249,21 @@ journal names
   series	= {Springer Monographs in Mathematics}
 }
 
-###Article{	  barreira2011,
-  title		= {The surface finite element method for pattern formation on
-		  evolving biological surfaces},
-  author	= {R. Barreira and C.~M. Elliott and A. Madzvamuse},
-  journal	= {Journal of Mathematical Biology},
-  year		= {2011},
-  comment	= {quasilinear system},
-  doi		= {10.1007/s00285-011-0401-0}
-}
-
-###Article{	  barreiraelliottmadzvamuse_patternformation,
-  title		= {The surface finite element method for pattern formation on
-		  evolving biological surfaces},
-  author	= {B. Barreira and C. M. Elliott and A. Madzvamuse},
-  journal	= {Journal of Mathematical Biology},
-  year		= {2011},
-  pages		= {1095--1119.},
-  volume	= {63}
-}
-
+old labels:
+barreira2011
+barreiraelliottmadzvamuse_patternformation
 @Article{	  barreira2011surface,
-  title		= {The surface finite element method for pattern formation on
-		  evolving biological surfaces},
-  author	= {Barreira, R. and Elliott, C.~M. and Madzvamuse, A},
+  title		= "The surface finite element method for pattern formation on
+		  evolving biological surfaces",
+  author	= barreira # and # elliott # and # madzvamuse,
   journal	= jmb,
+  publisher	= jmbpub,
+  address	= jmbad,
+  issn		= jmbissn,
   volume	= 63,
   number	= 6,
   pages		= {1095--1119},
   year		= 2011,
-  publisher	= {Springer},
   doi		= {10.1007/s00285-011-0401-0}
 }
 
@@ -561,7 +625,6 @@ journal names
   number	= 2,
   pages		= {394--416.},
   volume	= 32,
-  arxiv         = "11111v1",
   doi		= {10.1093/imanum/drr017}
 }
 
