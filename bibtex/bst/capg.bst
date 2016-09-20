@@ -45,7 +45,7 @@ ENTRY
     year
     arxiv
     isbn
-    % doi
+    doi
   }
   {}
   { label }
@@ -564,6 +564,13 @@ FUNCTION {format.isbn}
   { "ISBN:" isbn * }
   if$
 }
+FUNCTION {format.doi}
+{
+  doi missing$
+  { "" }
+  { "DOI:" doi * }
+  if$
+}
 
 FUNCTION {article}
 { output.bibitem
@@ -581,16 +588,10 @@ FUNCTION {article}
     }
   if$
   new.block
-  note output
-  new.block
+  format.doi output
   format.arxiv output
-%   doi missing$
-%   {}
-%   {
-%     new.block
-%     "doi:\texttt{" doi * "\/}" * output
-%   }
-%   if$
+  new.block
+  note output
   fin.entry
 }
 
