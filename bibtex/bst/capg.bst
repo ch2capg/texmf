@@ -44,7 +44,8 @@ ENTRY
     volume
     year
     arxiv
-    doi
+    isbn
+    % doi
   }
   {}
   { label }
@@ -556,6 +557,13 @@ FUNCTION {format.arxiv}
   { "arXiv:" arxiv * }
   if$
 }
+FUNCTION {format.isbn}
+{
+  isbn missing$
+  { "" }
+  { "ISBN:" isbn * }
+  if$
+}
 
 FUNCTION {article}
 { output.bibitem
@@ -602,8 +610,8 @@ FUNCTION {book}
   crossref missing$
     { % format.bvolume output
       new.block
-      format.number.series output
-      new.sentence
+      % format.number.series output
+      % new.sentence
       publisher "publisher" output.check
       address output
     }
@@ -611,10 +619,12 @@ FUNCTION {book}
       format.book.crossref output.nonnull
     }
   if$
-  format.edition output
+  % format.edition output
   format.date "year" output.check
   new.block
   note output
+  new.block
+  format.isbn output
   fin.entry
 }
 
