@@ -195,7 +195,7 @@ FUNCTION {emphasize}
   if$
 }
 
-FUNCTION {boldstyle}
+FUNCTION {boldface}
 {
   duplicate$ empty$
     { pop$ ""}
@@ -618,7 +618,7 @@ FUNCTION {format.num}
 }
 FUNCTION {format.journal.vol.year}
 {
-  journal emphasize " " * volume boldstyle * " " * format.year *
+  journal emphasize " " * volume boldface * " " * format.year *
 }
 FUNCTION {article}
 { output.bibitem
@@ -647,6 +647,18 @@ FUNCTION {article}
   fin.entry
 }
 
+FUNCTION {bvolume.series.check}
+{
+  series missing$
+    {
+      volume missing$
+      {}
+      {"we have volume but no series for " cite$ * warning$}
+      if$
+    }
+    {}
+  if$
+}
 FUNCTION {book}
 { output.bibitem
   author empty$
@@ -660,11 +672,19 @@ FUNCTION {book}
   if$
   new.block
   format.btitle "title" output.check
+  new.block
+  format.edition output
   crossref missing$
     { % format.bvolume output
-      new.block
+      % new.block
+      % format.bvolume output
       % format.number.series output
       % new.sentence
+      new.block
+      bvolume.series.check
+      series emphasize output
+      volume boldface output
+      new.block
       publisher "publisher" output.check
       address output
     }
@@ -672,7 +692,6 @@ FUNCTION {book}
       format.book.crossref output.nonnull
     }
   if$
-  % format.edition output
   format.date "year" output.check
   new.block
   note output
