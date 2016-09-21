@@ -383,8 +383,10 @@ FUNCTION {format.pages}
 { pages empty$
     { "" }
     { pages multi.page.check
-        { "pages" pages n.dashify tie.or.space.connect }
-        { "page" pages tie.or.space.connect }
+      { "p." pages n.dashify tie.or.space.connect }
+      { "p." pages tie.or.space.connect }
+%         { "pages" pages n.dashify tie.or.space.connect }
+%         { "page" pages tie.or.space.connect }
       if$
     }
   if$
@@ -394,7 +396,7 @@ FUNCTION {format.vol.num.pages}
 { volume field.or.null
   number empty$
     'skip$
-    { "(" number * ")" * *
+    { " (" number * ")" * *
       volume empty$
         { "there's a number but no volume in " cite$ * warning$ }
         'skip$
@@ -405,7 +407,7 @@ FUNCTION {format.vol.num.pages}
     'skip$
     { duplicate$ empty$
         { pop$ format.pages }
-        { ":" * pages n.dashify * }
+        { ": " * pages n.dashify * }
       if$
     }
   if$
@@ -564,11 +566,32 @@ FUNCTION {format.isbn}
   { "ISBN:" isbn * }
   if$
 }
+FUNCTION {backslash.to.allowbreak}{
+  't :=
+  ""
+  { t empty$ not}
+  {
+    t #1 #1 substring$ "/" =
+      {
+	"/\allowbreak " *
+	t #1 #12 substring$ "/\allowbreak" =
+	  { t #13 global.max$ substring$ 't := }
+	  { t #2 global.max$ substring$ 't := }
+	if$
+      }
+      {
+	t #1 #1 substring$ *
+	t #2 global.max$ substring$ 't :=
+      }
+    if$
+  }
+  while$
+}
 FUNCTION {format.doi}
 {
   doi missing$
   { "" }
-  { "DOI:" doi * }
+  { "DOI:" doi backslash.to.allowbreak * }
   if$
 }
 
@@ -580,7 +603,7 @@ FUNCTION {article}
   new.block
   crossref missing$
     { journal emphasize "journal" output.check
- %      format.vol.num.pages output
+      format.vol.num.pages output
       format.date "year" output.check
     }
     { format.article.crossref output.nonnull
