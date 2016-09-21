@@ -195,6 +195,14 @@ FUNCTION {emphasize}
   if$
 }
 
+FUNCTION {boldstyle}
+{
+  duplicate$ empty$
+    { pop$ ""}
+    { "\textbf{" swap$ * "}" *}
+  if$
+}
+
 INTEGERS { nameptr namesleft numnames }
 
 FUNCTION {format.names}
@@ -520,7 +528,7 @@ FUNCTION {format.book.crossref}
               crossref * warning$
               "" *
             }
-            { "{\em " * series * "\/}" * }
+            { "\emph{ " * series * "\/}" * }
           if$
         }
         { key * }
@@ -541,7 +549,7 @@ FUNCTION {format.incoll.inproc.crossref}
               crossref * warning$
               ""
             }
-            { "In {\em " booktitle * "\/}" * }
+            { "In \emph{ " booktitle * "\/}" * }
           if$
         }
         { "In " key * }
@@ -594,7 +602,24 @@ FUNCTION {format.doi}
   { "DOI:" doi backslash.to.allowbreak * }
   if$
 }
-
+FUNCTION {format.year}
+{
+  year missing$
+    { "" }
+    {"(" year * ")" *}
+  if$
+}
+FUNCTION {format.num}
+{
+  number missing$
+    { "" }
+    { "no. " number * }
+  if$
+}
+FUNCTION {format.journal.vol.year}
+{
+  journal emphasize " " * volume boldstyle * " " * format.year *
+}
 FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
@@ -602,9 +627,13 @@ FUNCTION {article}
   format.title "title" output.check
   new.block
   crossref missing$
-    { journal emphasize "journal" output.check
-      format.vol.num.pages output
-      format.date "year" output.check
+    {
+      format.journal.vol.year "journal and year" output.check
+      format.num output
+      format.pages output
+%       journal emphasize "journal" output.check
+%       format.vol.num.pages output
+%       format.date "year" output.check
     }
     { format.article.crossref output.nonnull
       format.pages output
