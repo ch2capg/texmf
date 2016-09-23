@@ -10,7 +10,7 @@
 %  Copyright (c) 2016 Christian Power.  All rights reserved.
 % ----------------------------------------------------------------------
 
-\ProvidesPackage{myMathSymb}[2016/09/14 v0.4.1 math macros]
+\ProvidesPackage{myMathSymb}[2016/09/14 v0.5.0 math macros]
 
 \newcommand*\Q{\mathds{Q}}
 \newcommand*\Z{\mathds{Z}}
@@ -90,18 +90,6 @@
 %   {\prescript{#6}{#7}{\normDPD[#2]{#3}{#4}{#5}}}
 % }
 % % ----------
-% \DeclarePairedDelimiterXPP\braketDPD[5]{}\langle\rangle
-% {\ifblank{#4}{}{^{#4}}\ifblank{#5}{}{_{#5}}}
-% { \ifblank{#1}{\dotarg}{#1}
-%   \ifblank{#2}{\,\delimsize\vert\,\mathopen{}}
-%   {\,\delimsize\lvert\,\mathopen{}#2\,\delimsize\rvert\,\mathopen{}}
-%   \ifblank{#3}{\dotarg}{#3} }
-% \NewDocumentCommand\braket{sO{}mO{}mO{}O{}O{}O{}}
-% {\IfBooleanTF #1
-%   {\prescript{#8}{#9}{\braketDPD*{#3}{#4}{#5}{#6}{#7}}}
-%   {\prescript{#8}{#9}{\braketDPD[#2]{#3}{#4}{#5}{#6}{#7}}}
-% }
-% % ----------
 
 \DeclarePairedDelimiterX\norm[1]\lVert\rVert{
   \ifblank{#1}{\dotarg}{#1}
@@ -125,6 +113,7 @@
 \DeclarePairedDelimiterX\abr[1]\langle\rangle{
   \ifblank{#1}{\dotarg}{#1}
 }
+% ----------
 \providecommand\given{}  % just to make sure it exists
 % can be useful to refer to this outside \Set
 \newcommand*\SetSymbol[1][]{
@@ -136,21 +125,20 @@
   \renewcommand\given{\SetSymbol[\delimsize]}
   #1
 }
-\providecommand\mult{}  % just to make sure it exists
-\newcommand*\BraketSymbol[1][]{
-  \nonscript\,#1\vert
-  \allowbreak
-  \nonscript\,
-  \mathopen{}}
-\DeclarePairedDelimiterX\braket[2]\langle\rangle{
-  \renewcommand\mult{\BraketSymbol[\delimsize]}
-  \ifblank{#1}{\dotarg}{#1}\,\delimsize\vert\,\mathopen{}
-  \ifblank{#2}{\dotarg}{#2}
+% ----------
+\DeclarePairedDelimiterXPP\braketDPD[5]{}\langle\rangle
+{\ifblank{#4}{}{^{#4}}\ifblank{#5}{}{_{#5}}}
+{ \ifblank{#1}{\dotarg}{#1}
+  \ifblank{#2}{\,\delimsize\vert\,\mathopen{}}
+  {\,\delimsize\lvert\,\mathopen{}#2\,\delimsize\rvert\,\mathopen{}}
+  \ifblank{#3}{\dotarg}{#3} }
+\NewDocumentCommand\braket{sO{}mO{}mO{}O{}O{}O{}}
+{\IfBooleanTF #1
+  {\prescript{#8}{#9}{\braketDPD*{#3}{#4}{#5}{#6}{#7}}}
+  {\prescript{#8}{#9}{\braketDPD[#2]{#3}{#4}{#5}{#6}{#7}}}
 }
-\DeclarePairedDelimiterX\triBraket[3]\langle\rangle{
-  #1\,\delimsize\lvert\,\mathopen{}#2\,\delimsize\rvert\,\mathopen{}#3
-}
-% --------------------
+% ----------
+
 \DeclareDocumentCommand\od{O {} m m}{
   \frac{\dif\ifblank{#1}{}{^{#1}} #2}{\dif #3\ifblank{#1}{}{^{#1}}}
 }
