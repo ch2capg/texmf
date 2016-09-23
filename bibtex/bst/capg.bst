@@ -203,6 +203,14 @@ FUNCTION {boldface}
   if$
 }
 
+FUNCTION {scshape}
+{
+  duplicate$ empty$
+    { pop$ ""}
+    { "\textsc{" swap$ * "}" *}
+  if$
+}
+
 INTEGERS { nameptr namesleft numnames }
 
 FUNCTION {format.names}
@@ -237,7 +245,7 @@ FUNCTION {format.names}
 FUNCTION {format.authors}
 { author empty$
     { "" }
-    { author format.names }
+    { author format.names scshape }
   if$
 }
 
@@ -303,7 +311,7 @@ FUNCTION {format.date}
 }
 
 FUNCTION {format.btitle}
-{ title emphasize
+{ title % emphasize
 }
 
 FUNCTION {tie.or.space.connect}
@@ -441,8 +449,10 @@ FUNCTION {format.in.ed.booktitle}
 { booktitle empty$
     { "" }
     { editor empty$
-        { "In " booktitle emphasize * }
-        { "In " format.editors * ", " * booktitle emphasize * }
+      { "In " booktitle * }
+      { "In " format.editors * ", " * booktitle * }
+%        { "In " booktitle emphasize * }
+%        { "In " format.editors * ", " * booktitle emphasize * }
       if$
     }
   if$
