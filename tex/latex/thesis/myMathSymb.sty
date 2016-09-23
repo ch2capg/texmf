@@ -63,15 +63,47 @@
 \DeclareMathOperator\sgn{sgn}
 \DeclareMathOperator\const{const}
 % ----------------------------------------------------------------------
-\DeclarePairedDelimiterX\abs[1]\lvert\rvert{
-  \ifblank{#1}{\dotarg}{#1}
+% \DeclarePairedDelimiterX\abs[1]\lvert\rvert{
+%   \ifblank{#1}{\dotarg}{#1}
+% }
+% \DeclarePairedDelimiterXPP\labs[2]{}\lvert\rvert{
+%   \ifblank{#2}{}{_{#2}}
+% }{
+%   \ifblank{#1}{\dotarg}{#1}
+% }
+% ----------
+\DeclarePairedDelimiterXPP\absDPD[3]{}\lvert\rvert
+{\ifblank{#2}{}{^{#2}}\ifblank{#3}{}{_{#3}}}
+{\ifblank{#1}{\dotarg}{#1}}
+\NewDocumentCommand\abs{sO{}mO{}O{}O{}O{}}
+{\IfBooleanTF #1
+  {\prescript{#6}{#7}{\absDPD*{#3}{#4}{#5}}}
+  {\prescript{#6}{#7}{\absDPD[#2]{#3}{#4}{#5}}}
 }
+% % ----------
+% \DeclarePairedDelimiterXPP\normDPD[3]{}\lVert\rVert
+% {\ifblank{#2}{}{^{#2}}\ifblank{#3}{}{_{#3}}}
+% {\ifblank{#1}{\dotarg}{#1}}
+% \NewDocumentCommand\norm{sO{}mO{}O{}O{}O{}}
+% {\IfBooleanTF #1
+%   {\prescript{#6}{#7}{\normDPD*{#3}{#4}{#5}}}
+%   {\prescript{#6}{#7}{\normDPD[#2]{#3}{#4}{#5}}}
+% }
+% % ----------
+% \DeclarePairedDelimiterXPP\braketDPD[5]{}\langle\rangle
+% {\ifblank{#4}{}{^{#4}}\ifblank{#5}{}{_{#5}}}
+% { \ifblank{#1}{\dotarg}{#1}
+%   \ifblank{#2}{\,\delimsize\vert\,\mathopen{}}
+%   {\,\delimsize\lvert\,\mathopen{}#2\,\delimsize\rvert\,\mathopen{}}
+%   \ifblank{#3}{\dotarg}{#3} }
+% \NewDocumentCommand\braket{sO{}mO{}mO{}O{}O{}O{}}
+% {\IfBooleanTF #1
+%   {\prescript{#8}{#9}{\braketDPD*{#3}{#4}{#5}{#6}{#7}}}
+%   {\prescript{#8}{#9}{\braketDPD[#2]{#3}{#4}{#5}{#6}{#7}}}
+% }
+% % ----------
+
 \DeclarePairedDelimiterX\norm[1]\lVert\rVert{
-  \ifblank{#1}{\dotarg}{#1}
-}
-\DeclarePairedDelimiterXPP\labs[2]{}\lvert\rvert{
-  \ifblank{#2}{}{_{#2}}
-}{
   \ifblank{#1}{\dotarg}{#1}
 }
 \DeclarePairedDelimiterXPP\lnorm[2]{}\lVert\rVert{
