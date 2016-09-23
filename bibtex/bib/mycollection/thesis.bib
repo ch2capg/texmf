@@ -37,7 +37,7 @@ author names
 @string{power = "Power Guerra, {\relax Ch}ristian Andreas"}
 @string{kovacs = "Kov{\'a}cs, Bal{\'a}zs"}
 @string{adams = "Adams, Robert A."}
-@string{fournier = "Fournier, John JF."}
+@string{fournier = "Fournier, John J. F."}
 @string{alphonse = "Alphonse, Amal"}
 @string{aubin = "Aubin, Thierry"}
 @string{barrett = "Barrett, John W."}
@@ -87,11 +87,27 @@ author names
 @string{norsett = "N{\o}rsett, Syvert Paul"}
 @string{wanner = "Wanner, Gerhard"}
 @string{hamilton = "Hamilton, Richard S."}
+@string{fix = "Fix, George J."}
+@string{atkinson = "Atkinson, Kendall E."}
+@string{han = "Han, Weimin"}
+@string{lieberman = "Lieberman, Gary M."}
+@string{wheeler = "Wheeler, Mary Fanett"}
+@string{schoenborn = "Schoenborn, Oliver"}
+@string{desai = "Desai, Rashmi C."}
+@string{rannacher = "Rannacher, Rolf"}
+@string{raetz = "R{\"a}tz, Andreas"}
+@string{voigt = "Voigt, A."}
+@string{mayer = "Mayer, Uwe F."}
+@string{simonett = "Simonett, Gieri"}
+@string{nevanlinna = "Nevanlinna, Olavi"}
+@string{odeh = "Odeh, F."}
+@string{ecker = "Ecker, Klaus"}
 
 publisher name
 ==================================================
 @string{cambridge = "Cambridge university press"}
-@string{academic = "Academic press"}
+@string{academic = "Elsevier/ Academic press"}
+@string{springerv = "Springer Verlag"}
 
 school name
 ==================================================
@@ -224,6 +240,22 @@ journal names
 @string{jdgpub = "Lehigh University"}
 @string{jdgad = "Bethlehem, Penn."}
 @string{jdgissn = "0022-040X"}
+"Journal of Statistical Physics"
+@string{jsp = "J. Statist. Phys."}
+@string{jsppub = "Springer"}
+@string{jspad = ""}
+@string{jspissn = ""}
+"Journal of Mathematical Analysis and Applications"
+@string{jmaa = "J. Math. Anal. Appl."}
+@string{jmaapub = "Elsevier"}
+@string{jmaaad = "Amsterdam"}
+@string{jmaaissn = "0022-247X"}
+"Numerical Functional Analysis and Optimization"
+@string{nfao = "Numer. Funct. Anal. Optim."}
+@string{nfaopub = "Taylor \& Francis"}
+@string{nfaoad = "Philadelphia, PA"}
+@string{nfaoissn = "0163-0563"}
+
 
 ======================================================================
 
@@ -331,14 +363,17 @@ old label:
 }
 
 old label:
-2003_adamsFournier
-@Book{adams,
+adams
+@Book{adamsbook,
   title		= "Sobolev spaces",
   booktitle	= "Sobolev spaces",
   author	= adams # and # fournier,
   publisher	= academic,
   year		= 2003,
-  volume	= 140
+  series	= "Pure and Applied Mathematics",
+  edition	= 2,
+  volume	= 140,
+  isbn		= "0-12-044143-8"
 }
 
 old label:
@@ -359,7 +394,7 @@ akrivislubich_quasilinbdf
 old label:
 alediscrete
 @unpublished{2014_kovacsPower,
-  title		= "Higher--oder time discretizations with {ALE} finite
+  title		= "High\-er-or\-der time discretizations with {ALE} finite
 		   elements for parabolic problems on evolving surfaces",
   author	= kovacs # and # power,
   journal	= imajna,
@@ -387,7 +422,7 @@ alphonseelliottstinner
   title		= "Some {N}onlinear {P}roblems in {R}iemannian {G}eometry",
   booktitle	= "Some {N}onlinear {P}roblems in {R}iemannian {G}eometry",
   author	= aubin,
-  publisher	= "Springer",
+  publisher	= springerv,
   year		= 1998,
   series	= "Springer Monographs in Mathematics",
   isbn		= "3-540-60752-8"
@@ -430,6 +465,7 @@ barrettgarckenurnberg
 
 old label:
 bonito2013
+nochetto_stability
 @Article{2013_bonitoEtAl,
   title		= "Time--discrete higher--order {ALE} formulations:
 		   {S}tability",
@@ -446,6 +482,7 @@ bonito2013
 
 old label:
 bonito2013a
+nochetto_error
 @Article{2013_bonitoEtAl_errana,
   title		= "Time--discrete higher--order {ALE} formulations: {A} priori 
 		   error analysis",
@@ -456,7 +493,7 @@ bonito2013a
   issn		= nmissn,
   year		= 2013,
   optmonth	= {march},
-  pages		= "577-604",
+  pages		= "225-257",
   number	= 2,
   volume	= 125
 }
@@ -478,9 +515,12 @@ boulkhemairchakib_uniformpoincare
 @Book{brennerscott,
   title		= "The {M}athematical {T}heory of {F}inite {E}lement {M}ethods",
   author	= brenner # and # scott,
-  publisher	= "Springer",
-  year		= 2007,
-  volume	= 15
+  publisher	= springerv,
+  address	= "New York",
+  year		= 1994,
+  series	= "Texts in Applied Mathematics",
+  volume	= 15,
+  isbn		= "0-387-94193-2"
 }
 
 old label:
@@ -994,7 +1034,7 @@ elliottstyles_alenumerics
   author	= evans,
   publisher	= "AMS",
   year		= 2010,
-  edition	= "second",
+  edition	= 2,
   volume	= 19,
   isbn		= "978-9-8218-4974-3",
   series	= "Graduate Studies in Mathematics"
@@ -1053,10 +1093,12 @@ geodesic_ball
 
 old label:
 @Book{gilbargtrudinger,
-  title		= "Elliptic partial differential equations of second order",
-  booktitle	= "Elliptic partial differential equations of second order",
+  title		= "Elliptic {P}artial {D}ifferential 
+		   {E}quations of {S}econd {O}rder",
+  booktitle	= "Elliptic {P}artial {D}ifferential 
+		   {E}quations of {S}econd {O}rder",
   author	= gilbarg # and # trudinger,
-  publisher	= "Springer",
+  publisher	= springerv,
   year		= 1998,
   edition	= 2,
   isbn		= "3-540-13025-X; 0-387-13025-X"
@@ -1066,7 +1108,7 @@ old label:
   title		= "Solving {O}rdinary {D}ifferential {E}quations {I}: {N}onstiff
 		   problems",
   author	= hairer # and # norsett # and # wanner,
-  publisher	= "Springer",
+  publisher	= springerv,
   year		= 1993,
   edition	= 2
 }
@@ -1075,7 +1117,7 @@ old label:
   title		= "Solving Ordinary Differential Equations II.: Stiff and
 		   differetial--algebraic problems",
   author	= hairer # and # wanner,
-  publisher	= "Springer",
+  publisher	= springerv,
   year		= 1996,
   edition	= 2
 }
@@ -1096,7 +1138,7 @@ hamilton1982
   year		= 1982
 }
 
-@Article{	  handwerker,
+@Article{ handwerker,
   title		= "Diffusion-induced grain boundary migration in thin films",
   author	= {Handwerker, C.},
   journal	= "Diffusion Phenomena in Thin Films and Microelectronic Materials",
@@ -1106,7 +1148,7 @@ hamilton1982
   pages		= "245-322"
 }
 
-@Article{	  jin2004,
+@Article{ jin2004,
   title		= {Region--based segmentation on evolving surfaces with
 		  application to 3{D} reconstruction of shape and piecewise
 		  constant radiance},
@@ -1116,7 +1158,7 @@ hamilton1982
   url		= {http://escholarship.org/uc/item/1543r7md}
 }
 
-@Article{	  kimmel1997,
+@Article{ kimmel1997,
   title		= {Intrinsic scale space for images on surfaces: the geodesic
 		  curvature flow},
   author	= {Kimmel, R.},
@@ -1125,24 +1167,24 @@ hamilton1982
   comment	= {quasilinear}
 }
 
-@Book{		  koenigsberger,
+@Book{ koenigsberger,
   title		= "Analysis 2",
   author	= {K\"{o}nigsberger, K.},
-  publisher	= {Springer},
+  publisher	= springerv,
   year		= 2004
 }
 
-@Article{	  leung2002,
+@Article{ leung2002,
   title		= {A computational model for organism growth based on surface
 		  mesh generation},
   author	= {Leung, C.~H. and Berzins, M.},
   journal	= {J. Comput. Phys.},
   year		= 2002,
-  comment	= {flud flow, Navier--Stokes}
+  comment	= {fluid flow, Navier--Stokes}
 }
 
 duplicate label: lubichostermann_rk
-@Article{	  lubich1995,
+@Article{ lubich1995,
   title		= {{R}unge--{K}utta approximation of quasilinear parabolic
 		  equations},
   author	= lubich # and # ostermann, 
@@ -1156,19 +1198,16 @@ duplicate label: lubichostermann_rk
   doi		= {10.1090/S0025-5718-1995-1284670-0}
 }
 
-@Article{	  lubich2013,
-  title		= {Variational discretization of linear wave equations on
-		  evolving surfaces},
-  author	= {Ch. Lubich and D.~E. Mansour},
-  journal	= {To appear in Math. Comp.},
-  year		= 2013
-}
-
-@Article{	  lubich2013a,
-  title		= {Backward difference time discretization of parabolic
-		  differential equations on evolving surfaces},
-  author	= {Ch. Lubich and D.~E. Mansour and C. Venkataraman},
-  journal	= {IMA J. Numer. Anal.},
+old label:
+lubichmansourvenkataraman
+@Article{ lubich2013a,
+  title		= "Backward difference time discretization of parabolic
+		   differential equations on evolving surfaces",
+  author	= lubich # and # mansour # and # venkataraman,
+  journal	= imajna,
+  publisher	= imajnapub,
+  address	= imajnaad,
+  issn		= imajnaissn,
   year		= 2013,
   number	= 4,
   pages		= "1365-1385",
@@ -1176,73 +1215,72 @@ duplicate label: lubichostermann_rk
   doi		= {10.1093/imanum/drs044}
 }
 
-@Article{	  lubichmansour_wave,
+old label:
+lubich2013
+@Article{ lubichmansour_wave,
   title		= {Variational discretization of wave equations on evolving
 		  surfaces},
-  author	= {Lubich, Ch. and Mansour, D.~E.},
-  journal	= {Mathematics of Computation},
+  author	= lubich # and # mansour,
+  journal	= mc,
+  publisher	= mcpub,
+  address	= mcad,
+  issn		= mcissn,
   year		= 2015,
   number	= 292,
   pages		= "513-542",
   volume	= 84
 }
 
-@Article{	  lubichmansourvenkataraman_bdsurf,
-  title		= {Backward difference time discretization of parabolic
-		  differential equations on evolving surfaces},
-  author	= {Lubich, Ch. and Mansour, D.~E. and Venkataraman, C.},
-  journal	= {IMA Journal of Numerical Analysis},
-  year		= 2013,
-  number	= 4,
-  pages		= "1365-1385",
-  volume	= 33,
-  doi		= {10.1093/imanum/drs044}
-}
-
-@Article{	  madzvamuse2014exhibiting,
+@Article{ madzvamuse2014exhibiting,
   title		= {Exhibiting cross-diffusion-induced patterns for
-		  reaction-diffusion systems on evolving domains and
-		  surfaces},
-  author	= {Madzvamuse, A. and Barreira, R.},
-  journal	= {Physical Review E},
+		   reaction-diffusion systems on evolving domains and
+		   surfaces},
+  author	= madzvamuse # and # barreira,
+  journal	= "Physical Review E",
   year		= 2014,
   number	= 4,
-  pages		= 043307,
   volume	= 90,
-  publisher	= {APS}
+  publisher	= "APS"
 }
 
-###Article{	  mansour2013a,
+old label:
+mansour2013a
+@Article{ mansour_grk,
   title		= {{G}auss--{R}unge--{K}utta time discretization of wave
-		  equations on evolving surfaces},
-  author	= {D.~E. Mansour},
-  journal	= {(to appear in {N}umerische {M}athematik)},
-  year		= 2013
-}
-
-@Article{	  mansour_grk,
-  title		= {{G}auss--{R}unge--{K}utta time discretization of wave
-		  equations on evolving surfaces},
-  author	= {D.~E. Mansour},
-  journal	= {Numer. Math.},
+		   equations on evolving surfaces},
+  author	= mansour,
+  journal	= nm,
+  publisher	= nmpub,
+  address	= nmad,
+  issn		= nmissn,
   volume	= 129,
   pages		= "21-54",
   year		= 2015
 }
 
-@Article{	  mayer1999,
-  title		= {Classical solutions for diffusion--induced grain--boundary
-		  motion},
-  author	= {Mayer, U.~F. and Simonett, G.},
-  journal	= {Journal of Mathematical Analysis and Applications},
+@Article{ mayer1999,
+  title		= "Classical solutions for diffusion--induced grain--boundary
+		   motion",
+  author	= mayer # and # simonett,
+  journal	= jmaa,
+  publisher	= jmaapub,
+  address	= jmaaad,
+  issn		= jmaaissn,
+  volume	= 234,
+  number	= 2,
+  pages		= "660-674",
   year		= 1999,
   comment	= {semilinear}
 }
 
-@Book{	  mcfeckart,
+@Book{ mcfeckart,
   title		= "Regularity theory for mean curvature flow",
-  author	= {Ecker, Klaus},
-  publisher	= {Birk\-h\"{a}us\-er},
+  author	= ecker,
+  publisher	= "Birk\-h{\"a}us\-er",
+  address	= "Boston, MA.",
+  isbn		= "0-8176-3243-3",
+  series	= "Progress in Nonlinear Differential Equations and their Applications",
+  volume	= 57,
   year		= 2004
 }
 
@@ -1257,10 +1295,11 @@ duplicate label: lubichostermann_rk
   comment	= {quasilinear}
 }
 
-@Article{	  mfboundarysmf,
+@Article{ mfboundarysmf,
   title		= "3-manifolds efficiently bound 4-manifolds",
-  author	= {Costantino, F. and Thurston, D.~P.},
-  journal	= {Journal of Topology},
+  author	= "Costantino, Francesco and Thurston, Dylan P.",
+  journal	= "J. Topol.",
+  fjournal	= "Journal of Topology",
   year		= 2008,
   number	= 3,
   pages		= "703-745",
@@ -1268,183 +1307,176 @@ duplicate label: lubichostermann_rk
   doi		= {10.1112/jtopol/jtn017}
 }
 
-@Book{		  morgan,
-  author	= {Morgan, F.},
-  alteditor	= {},
+@Book{ morgan,
+  author	= "Morgan, Frank",
   title		= "Geometric Measure Theory",
-  publisher	= {Academic Press},
+  booktitle	= "Geometric Measure Theory",
+  publisher	= academic,
   year		= 1988,
+  isbn		= "0-12-506855-7",
   optkey	= {},
   optvolume	= {},
   optnumber	= {},
   optseries	= {},
-  optaddress	= {},
+  address	= "Boston, MA.",
   optedition	= {},
   optmonth	= {},
   optnote	= {},
   optannote	= {}
 }
 
-@Article{	  nevanlinnaodeh,
+@Article{ nevanlinnaodeh,
   title		= "Multiplier techniques for linear multistep methods",
-  author	= {Nevanlinna, O. and Odeh, F.},
-  journal	= {Numer. Funct. Anal. Optim.},
+  author	= nevanlinna # and # odeh,
+  journal	= nfao,
+  publisher	= nfaopub,
+  address	= nfaoad,
+  issn		= nfaoissn,
   year		= 1981,
   pages		= "377-423",
-  volume	= 3
+  volume	= 3,
+  number	= 4
 }
 
+% {Mathematical Aspects of Finite Element Methods},
 @Article{	  nitsche,
-  title		= "{$L^\infty$}-convergence of finite element approximations",
+  title		= "{$\lebesgue^\infty$}-convergence of finite element approximations", 
   author	= {Nitsche, J.},
-  journal	= {Mathematical Aspects of Finite Element Methods},
+  journal	= "Math. Asp. Finite Element Metho.",
   pages		= "261-274",
   year		= 1977,
-  publisher	= {Springer}
+  publisher	= springerv
 }
 
-@Article{	  nochetto_error,
-  title		= {Time--discrete higher--order {ALE} formulations: a priori
-		  error analysis},
-  author	= {A. Bonito and I. Kyza and R. H. Nochetto},
-  journal	= {Numer. Math.},
-  year		= 2013,
-  month		= {march},
-  pages		= "577-604",
-  doibad	= {10.1007\s00211-013-0549-3},
-  optnumber	= 1
-}
-
-@Article{	  nochetto_stability,
-  title		= {Time--discrete higher--order {ALE} formulations:
-		  stability},
-  author	= {A. Bonito and I. Kyza and R. H. Nochetto},
-  journal	= {SIAM J. Numer. Anal.},
-  year		= 2013,
+@Article{ raetz2006,
+  title		= "A diffuse-interface approximation for surface diffusion
+		   including adatoms",
+  author	= raetz # and # voigt,
+  journal	= "Nonlinearity",
+  volume	= 20,
   number	= 1,
-  pages		= "577-604",
-  volume	= 51,
-  doibad	= {10.1137\120862715}
-}
-
-@Article{	  raetz2006,
-  title		= {A diffuse--interface approximation for surface diffusion
-		  including adatoms},
-  author	= {R{\"a}tz, A. and Voigt, A.},
-  journal	= {Institute of Physics Publishing},
+  pages		= "177-192",
   year		= 2006,
   comment	= {phase-field, quasilinear}
 }
 
-@Article{	  rannacherscott,
-  title		= {Some optimal error estimates for piecewise linear finite
-		  element approximation},
-  author	= {Rannacher, R. and Scott, R.},
-  journal	= {Mathematics of Computation},
+@Article{ rannacherscott,
+  title		= "Some optimal error estimates for piecewise linear finite
+		   element approximation",
+  author	= rannacher # and # scott,
+  journal	= mc,
+  publisher	= mcpub,
+  address	= mcad,
+  issn		= mcissn,
   year		= 1982,
   number	= 158,
   pages		= "437-445",
   volume	= 38
 }
 
-@Manual{	  sage,
+@Manual{ sage,
   key		= {Sage},
-  author	= {The Sage Developers},
+  author	= "The Sage Developers",
   title		= "{S}age {M}athematics {S}oftware ({V}ersion 6.1.1)",
   note		= {\url{http://www.sagemath.org}},
   year		= 2014
 }
 
-@Article{	  schoenborn1999,
+@Article{ schoenborn1999,
   title		= "Kinetics of phase ordering on curved surfaces",
-  author	= {Schoenborn, Oliver and Desai, Rashmi C.},
+  author	= schoenborn # and # desai,
   volume        = 10,
   pages         = "949-979",
-  publisher     = {Springer},
-  journal       = {Journal of statistical physics},
+  journal       = jsp,
+  publisher     = jsppub,
   year		= 1999,
   comment	= {semilinear, Ginzburg-Landau equation},
   arxiv		= {cond-mat/9804237v2}
 }
 
-@Article{	  stone1990,
+@Article{ stone1990,
   title		= "A simple derivation of the timedependent
 		   convectivediffusion equation for surfactant transport along
 		   a deforming interface",
   author	= {Stone, H.A.},
   journal	= {Physics of Fluids A: Fluid Dynamics},
+  publisher	= {AIP},
+  volume	= 2,
+  number	= 1,
   year		= 1990,
   comment	= {linear},
   doi		= {10.1063/1.857686}
 }
 
-@Book{		  strangfix,
+@Book{ strangfix,
   title		= "An Analysis of the Finite Element Method",
-  author	= {Strang, G. and Fix, G.J.},
-  publisher	= {Prentice-Hall Englewood Cliffs, NJ},
+  author	= strang # and # fix, 
+  publisher	= "Prentice-Hall",
+  address	= "Englewood Cliffs, NJ.",
   year		= 1973,
+  series	= "Series in Automatic Computation",
   volume	= 212
 }
 
-@Book{		  swb-090211804,
-  title		= "Theoretical numerical analysis : a functional analysis
-		   framework",
-  series	= {Texts in applied mathematics ; 39},
-  author	= {Atkinson, Kendall E. and Han, Weimin},
-  address	= {New York},
-  publisher	= {Springer},
-  year		= 2001
+@Book{ swb-090211804,
+  title		= "Theoretical numerical analysis",
+  series	= "Texts in Applied Mathematics",
+  volume	= 39,
+  author	= atkinson # and # han,
+  address	= "New York",
+  publisher	= springerv,
+  year		= 2001,
+  isbn		= "0-387-95142-3"
 }
 
-@Book{		  swb-258337958,
+@Book{ swb-258337958,
   title		= "Second order parabolic differential equations",
-  author	= {Lieberman, {G.M.}},
-  address	= {New Jersey},
-  publisher	= {World Scientific},
-  year		= 2005,
-  edition	= {Repr., [rev. ed.]},
-  isbn		= {981-02-2883-X; 978-981-02-2883-5},
+  author	= lieberman,
+  address	= "River Edge, NJ",
+  publisher	= "World Scientific",
+  year		= 1996,
+  isbn		= {981-02-2883-X},
   size		= {XIII, 447 S.}
 }
 
-@Article{	  tang2005,
+@Article{ tang2005,
   title		= "Phase separation patterns for diblock copolymers on
 		   spherical surfaces: {A} finite volume method",
-  author	= {Tang, P. and Qiu, F. and Zhang, H. and Yang, Y.},
-  journal	= {Physical Review},
+  author	= "Tang, Ping and Qiu, Feng and Zhang, Hongdong and Yang, Yuliang",
+  journal	= "Physical Review",
+  publisher	= "APS",
   year		= 2005,
-  comment	= {nonlinear (nondivergence form)},
-  doi		= {10.1103/PhysRevE.72.016710}
+  volume	= 72,
+  number	= 1,
+  comment	= "nonlinear (nondivergence form)",
+  doi		= "10.1103/PhysRevE.72.016710"
 }
 
-@Book{		  thomee,
+old label:
+thomee2006
+@Book{ thomee,
   title		= "Galerkin {F}inite {E}lement {M}ethods for {P}arabolic {P}roblems",
-  author	= {Thom{\'e}e, V.},
+  author	= thomee,
   year		= 2006,
-  publisher	= {Springer Verlag}
-}
-
-@Book{		  thomee2006,
-  title		= "Galerkin finite element methods for parabolic problems",
-  author	= {Thom{\'e}e, V.},
-  publisher	= {Springer-Verlag, Berlin},
-  year		= 2006,
-  edition	= {Second},
-  series	= {Springer Series in Computational Mathematics},
+  edition	= 2,
+  publisher	= springerv,
+  address	= "Berlin",
+  series	= "Springer Series in Computational Mathematics",
   volume	= 25,
-  isbn		= {978-3-540-33121-6; 3-540-33121-2},
-  mrclass	= {65-02 (65M15 65M60)},
-  mrnumber	= {2249024 (2007b:65003)}
+  isbn		= "978-3-540-33121-6"
 }
 
-@Article{	  wheeler_nonlinritz,
-  title		= {A priori {$L^2$}-error estimates for {G}alerkin
+
+@Article{ wheeler_nonlinritz,
+  title		= {A priori {$\lebesgue^2$}-error estimates for {G}alerkin
 		  approximations to parabolic partial differential
 		  equations},
-  author	= {Wheeler, M.F.},
-  journal	= {SIAM Journal on Numerical Analysis},
+  author	= wheeler,
+  journal	= sjna,
+  publisher	= sjnapub,
+  address	= sjnaad,
+  issn		= sjnaissn,
   year		= 1973,
-  number	= 4,
   pages		= "723-759",
   volume	= 10
 }
