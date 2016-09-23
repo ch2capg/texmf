@@ -623,7 +623,7 @@ FUNCTION {format.num}
 {
   number missing$
     { "" }
-    { "no. " number * }
+    { "no. " number n.dashify * }
   if$
 }
 FUNCTION {format.journal.vol.year}
