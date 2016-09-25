@@ -10,7 +10,7 @@
 %  Copyright (c) 2016 Christian Power.  All rights reserved.
 % ----------------------------------------------------------------------
 
-\ProvidesPackage{myMathSymb}[2016/09/14 v0.5.0 math macros]
+\ProvidesPackage{myMathSymb}[2016/09/14 v0.6.0 math macros]
 
 \newcommand*\Q{\mathds{Q}}
 \newcommand*\Z{\mathds{Z}}
@@ -63,15 +63,6 @@
 \DeclareMathOperator\sgn{sgn}
 \DeclareMathOperator\const{const}
 % ----------------------------------------------------------------------
-% \DeclarePairedDelimiterX\abs[1]\lvert\rvert{
-%   \ifblank{#1}{\dotarg}{#1}
-% }
-% \DeclarePairedDelimiterXPP\labs[2]{}\lvert\rvert{
-%   \ifblank{#2}{}{_{#2}}
-% }{
-%   \ifblank{#1}{\dotarg}{#1}
-% }
-% ----------
 \DeclarePairedDelimiterXPP\absDPD[3]{}\lvert\rvert
 {\ifblank{#2}{}{^{#2}}\ifblank{#3}{}{_{#3}}}
 {\ifblank{#1}{\dotarg}{#1}}
@@ -80,26 +71,26 @@
   {\prescript{#6}{#7}{\absDPD*{#3}{#4}{#5}}}
   {\prescript{#6}{#7}{\absDPD[#2]{#3}{#4}{#5}}}
 }
-% % ----------
-% \DeclarePairedDelimiterXPP\normDPD[3]{}\lVert\rVert
-% {\ifblank{#2}{}{^{#2}}\ifblank{#3}{}{_{#3}}}
-% {\ifblank{#1}{\dotarg}{#1}}
-% \NewDocumentCommand\norm{sO{}mO{}O{}O{}O{}}
-% {\IfBooleanTF #1
-%   {\prescript{#6}{#7}{\normDPD*{#3}{#4}{#5}}}
-%   {\prescript{#6}{#7}{\normDPD[#2]{#3}{#4}{#5}}}
+% ----------
+\DeclarePairedDelimiterXPP\normDPD[3]{}\lVert\rVert
+{\ifblank{#2}{}{^{#2}}\ifblank{#3}{}{_{#3}}}
+{\ifblank{#1}{\dotarg}{#1}}
+\NewDocumentCommand\norm{sO{}mO{}O{}O{}O{}}
+{\IfBooleanTF #1
+  {\prescript{#6}{#7}{\normDPD*{#3}{#4}{#5}}}
+  {\prescript{#6}{#7}{\normDPD[#2]{#3}{#4}{#5}}}
+}
+% ----------
+% \DeclarePairedDelimiterX\norm[1]\lVert\rVert{
+%   \ifblank{#1}{\dotarg}{#1}
 % }
-% % ----------
-
-\DeclarePairedDelimiterX\norm[1]\lVert\rVert{
-  \ifblank{#1}{\dotarg}{#1}
-}
-\DeclarePairedDelimiterXPP\lnorm[2]{}\lVert\rVert{
-  \ifblank{#2}{}{_{#2}}
-}{
-  \ifblank{#1}{\dotarg}{#1}
-}
-\DeclarePairedDelimiterXPP\lNormP[3]{}\lVert\rVert{_{#2}^{#3}}{#1}
+% \DeclarePairedDelimiterXPP\lnorm[2]{}\lVert\rVert{
+%   \ifblank{#2}{}{_{#2}}
+% }{
+%   \ifblank{#1}{\dotarg}{#1}
+% }
+% \DeclarePairedDelimiterXPP\lNormP[3]{}\lVert\rVert{_{#2}^{#3}}{#1}
+% ----------
 \DeclarePairedDelimiterX\deli[1](){  % Delimiter
   \ifblank{#1}{\dotarg}{#1}
 }
