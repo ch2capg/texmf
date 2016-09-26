@@ -152,6 +152,22 @@
   {\norm*{#5}[#6][\sobolev{#3}{#4}]}
   {\norm[#2]{#5}[#6][\sobolev{#3}{#4}]}
 }
+\NewDocumentCommand\sobolevSN{sO{}mO{}mO{}}
+{\IfBooleanTF #1
+  {\abs*{#5}[#6][\sobolev{#3}{#4}]}
+  {\abs[#2]{#5}[#6][\sobolev{#3}{#4}]}
+}
+\NewDocumentCommand\lebesgue{sO{}mm}
+{L^{#3}
+  \ifblank{#4}{}{
+    \IfBooleanTF #1 {\deli*{#4}}{\deli[#2]{#4}}
+  }
+}
+\NewDocumentCommand\lebesgueN{sO{}mO{}mO{}}
+{\IfBooleanTF #1
+  {\norm*{#5}[#6][\lebesgue{#3}{#4}]}
+  {\norm[#2]{#5}[#6][\lebesgue{#3}{#4}]}
+}
 % \DeclareDocumentCommand{\Lnorm}{ O{} O{2} m}{ 
 %   \lVert #3\rVert_{ 
 %     L^{#2}\ifthenelse{\isempty{#1}}{}{(#1)}
