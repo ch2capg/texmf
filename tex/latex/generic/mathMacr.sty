@@ -10,7 +10,7 @@
 %  Copyright (c) 2016 Christian Power.  All rights reserved.
 % ----------------------------------------------------------------------
 
-\ProvidesPackage{mathMacr}[2016/09/26 v0.6.1 math macros]
+\ProvidesPackage{mathMacr}[2016/09/26 v0.7.0 math macros]
 
 \newcommand*\Q{\mathds{Q}}
 \newcommand*\Z{\mathds{Z}}
@@ -136,8 +136,21 @@
     \frac{\del\ifblank{#1}{}{^{#1}} #2}{\del #3\ifblank{#1}{}{^{#1}}}
   }{#4}
 }
-\DeclareDocumentCommand\sobolev{O{}m}{
-  \ifblank{#1}{H^{#2}}{W^{#2,#1}}
+\NewDocumentCommand\sobolevSymb{mm}{
+  \IfValueTF{#2}{W^{#1,#2}}{H^{#1}}
+}
+\NewDocumentCommand\sobolev{sO{} >{\SplitArgument{1}{,}}m m}
+{\sobolevSymb #3
+  \ifblank{#4}{}{
+    \IfBooleanTF #1
+    {\deli*{#4}}
+    {\deli[#2]{#4}}
+  }
+}
+\NewDocumentCommand\sobolevN{sO{}mO{}mO{}}
+{\IfBooleanTF #1
+  {\norm*{#5}[#6][\sobolev{#3}{#4}]}
+  {\norm[#2]{#5}[#6][\sobolev{#3}{#4}]}
 }
 % \DeclareDocumentCommand{\Lnorm}{ O{} O{2} m}{ 
 %   \lVert #3\rVert_{ 
