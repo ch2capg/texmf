@@ -183,6 +183,16 @@
 %     H^{#2}\ifthenelse{\isempty{#1}}{}{(#1)}
 %   }
 % }
+\DeclarePairedDelimiterXPP\dualPairDPD[4]{}\langle\rangle
+{\ifblank{#3}{}{_{#3}}\ifblank{#4}{}{^{#4}}}
+{\ifBlankDot{#1},\ifBlankDot{#2}}
+\NewDocumentCommand\dualPair{sO{}mmO{}}
+{\IfBooleanTF #1
+  {\dualPairDPD*{#3}{#4}{#5}{}}
+  {\dualPairDPD[#2]{#3}{#4}{#5}{}}
+}
+
+
 % ----------------------------------------------------------------------
 
 % ----------------------------------------------------------------------
