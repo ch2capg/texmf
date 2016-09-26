@@ -12,7 +12,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{tuebingenDiss}[2016/09/25 v0.0.1 Thesis class]
 
-\LoadClass[a5paper, twoside, BCOR=1cm, DIV=calc, pagesize=auto]{scrreprt}
+\LoadClass[a5paper, twoside, BCOR=1cm, DIV=calc]{scrreprt}
 % \KOMAoptions{DIV=last}
 \RequirePackage{nonMath}
 \RequirePackage{mathPack}
