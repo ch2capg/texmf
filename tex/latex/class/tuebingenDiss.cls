@@ -10,18 +10,18 @@
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{tuebingenDiss}[2016/09/25 v0.0.0 Thesis class]
+\ProvidesClass{tuebingenDiss}[2016/09/25 v0.0.1 Thesis class]
 
 \LoadClass[a5paper, twoside, BCOR=1cm, DIV=calc, pagesize=auto]{scrreprt}
 % \KOMAoptions{DIV=last}
 \RequirePackage{nonMath}
-\RequirePackage{myMathPack}
-\RequirePackage{myPalatino}
+\RequirePackage{mathPack}
+\RequirePackage{capgPalatino}
 \RequirePackage[mathpazo]{flexisym}
 \RequirePackage{breqn}
-\RequirePackage{thesisThm}
-\RequirePackage{thesisChap} 
-\RequirePackage{myMathSymb}
+\RequirePackage{capgThm}
+\RequirePackage{bigChap} 
+\RequirePackage{mathMacr}
 \hypersetup{linkcolor=blue, citecolor=blue}
 
 % ----------------------------------------------------------------------

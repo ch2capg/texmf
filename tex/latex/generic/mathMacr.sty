@@ -10,7 +10,7 @@
 %  Copyright (c) 2016 Christian Power.  All rights reserved.
 % ----------------------------------------------------------------------
 
-\ProvidesPackage{myMathSymb}[2016/09/14 v0.6.0 math macros]
+\ProvidesPackage{mathMacr}[2016/09/26 v0.6.1 math macros]
 
 \newcommand*\Q{\mathds{Q}}
 \newcommand*\Z{\mathds{Z}}
@@ -80,16 +80,6 @@
   {\prescript{#6}{#7}{\normDPD*{#3}{#4}{#5}}}
   {\prescript{#6}{#7}{\normDPD[#2]{#3}{#4}{#5}}}
 }
-% ----------
-% \DeclarePairedDelimiterX\norm[1]\lVert\rVert{
-%   \ifblank{#1}{\dotarg}{#1}
-% }
-% \DeclarePairedDelimiterXPP\lnorm[2]{}\lVert\rVert{
-%   \ifblank{#2}{}{_{#2}}
-% }{
-%   \ifblank{#1}{\dotarg}{#1}
-% }
-% \DeclarePairedDelimiterXPP\lNormP[3]{}\lVert\rVert{_{#2}^{#3}}{#1}
 % ----------
 \DeclarePairedDelimiterX\deli[1](){  % Delimiter
   \ifblank{#1}{\dotarg}{#1}
