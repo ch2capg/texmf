@@ -1,0 +1,34 @@
+%  Revision history
+%  --------------------------------------------------
+% 
+%       Revised by Christian Power September 2016
+%       Originally written by Jubobs 
+%            (on tex.stackexchange) 2014
+% 
+%  Add Julia definitions to package listings.sty
+%  Copyright (c) 2016 Christian Power.  All rights reserved.
+% ----------------------------------------------------------------------
+
+\ProvidesPackage{bigChap}[2016/09/12 v0.0.0 Adds Julia language to listings]
+
+% \RequiresPackage[usenames,dvipsnames]{xcolor}  % as a note
+\lstdefinelanguage{Julia}%
+  {morekeywords={abstract,begin,break,case,catch,const,continue,do,else,elseif,%
+      end,export,false,for,function,immutable,import,importall,if,in,%
+      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+      using,while},%
+   sensitive=true,%
+   alsoother={$},%
+   morecomment=[l]\#,%
+   morecomment=[n]{\#=}{=\#},%
+   morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+}[keywords,comments,strings]%
+\lstset{%
+    language         = Julia,
+    basicstyle       = \ttfamily,
+    keywordstyle     = \bfseries\color{blue},
+    stringstyle      = \color{magenta},
+    commentstyle     = \color{ForestGreen},
+    showstringspaces = false,
+}
