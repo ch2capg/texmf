@@ -1,23 +1,38 @@
 %  Revision history
 %  --------------------------------------------------
 %
+%       Revised by Christian Power October 2016
 %       Revised by Christian Power September 2016
 %       Originally written by Christian Power
 %            (power22c@gmail.com) 14.09.2016
 % 
-%  Load standard LaTeX math packages like amsmath, etc.
+%  Load standard LaTeX packages
 %  Copyright (c) 2016 Christian Power.  All rights reserved.
 % ----------------------------------------------------------------------
 
-\ProvidesPackage{mathPack}[2016/09/26 v0.0.1 math packages]
+\ProvidesPackage{stdPack}[2016/10/03 v0.0.1 standard packages]
 
-\RequirePackage{etoolbox}  % needed below
-\RequirePackage{xparse}  % needed below
+% ----------
+% non-math packages
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{lmodern}
+\RequirePackage{exscale}
+\RequirePackage{microtype}
+\RequirePackage{xifthen}
+\RequirePackage{booktabs}
+\RequirePackage{etoolbox}  
+\RequirePackage{xparse}
+\RequirePackage{graphicx} 
+\RequirePackage{xcolor} 
+% ----------
+% Math packages
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
-\RequirePackage{dsfont}
+\RequirePackage{mathrsfs}  
 \RequirePackage{bm}
-\RequirePackage{mathabx}
+% \RequirePackage{mathabx} % too many math symbols; choose between the three above
+\RequirePackage{dsfont}
 \RequirePackage{mathtools}
 
 % Provides \RedeclareMathOperator
