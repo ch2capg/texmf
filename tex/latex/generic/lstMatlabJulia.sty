@@ -5,13 +5,26 @@
 %       Originally written by Jubobs 
 %            (on tex.stackexchange) 2014
 % 
-%  Add Julia definitions to package listings.sty
+%  Add Julia definitions to package listings.sty and add costume 
+%  Matlab style 
 %  Copyright (c) 2016 Christian Power.  All rights reserved.
 % ----------------------------------------------------------------------
 
-\ProvidesPackage{bigChap}[2016/09/12 v0.0.0 Adds Julia language to listings]
+\ProvidesPackage{lstMatlabJulia}[2016/09/12 v0.0.0 Julia and Matlab listings]
 
 % \RequiresPackage[usenames,dvipsnames]{xcolor}  % as a note
+\lstset{language=Matlab,
+  keywordstyle=\bfseries\color{blue},
+  stringstyle=\color{magenta},
+  commentstyle=\color{ForestGreen},
+  numbers=left,
+  numberstyle=\small\ttfamily,
+  stepnumber=1,
+  numbersep=10pt,
+  basicstyle=\ttfamily,
+  showstringspaces = false,
+}
+
 \lstdefinelanguage{Julia}%
   {morekeywords={abstract,begin,break,case,catch,const,continue,do,else,elseif,%
       end,export,false,for,function,immutable,import,importall,if,in,%
