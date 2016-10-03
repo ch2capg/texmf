@@ -1,6 +1,7 @@
 %  Revision history
 %  --------------------------------------------------
 %
+%       Revised by Christian Power October 2016
 %       Originally written by Christian Power
 %            (power22c@gmail.com) 25.09.2016
 %
@@ -10,19 +11,24 @@
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{tuebingenDiss}[2016/09/25 v0.0.1 Thesis class]
+\ProvidesClass{tuebingenDiss}[2016/10/03 v0.0.2 Thesis class]
 
 \LoadClass[a5paper, twoside, BCOR=1cm, DIV=calc]{scrreprt}
 % \KOMAoptions{DIV=last}
-\RequirePackage{nonMath}
-\RequirePackage{mathPack}
+\RequirePackage[colorlinks=true,pdfpagelabels]{hyperref}
+\hypersetup{linkcolor=blue, citecolor=blue}
+\RequirePackage{scrlayer-scrpage}
+\RequirePackage{enumitem}
+% --------------------------------------------------
+% Costume headers
+% --------------------------------------------------
+\RequirePackage{stdPack}
 \RequirePackage{capgPalatino}
 \RequirePackage[mathpazo]{flexisym}
 \RequirePackage{breqn}
 \RequirePackage{capgThm}
 \RequirePackage{bigChap} 
 \RequirePackage{mathMacr}
-\hypersetup{linkcolor=blue, citecolor=blue}
 
 % ----------------------------------------------------------------------
 %  Creates the title page and the second page according to the 

@@ -12,22 +12,13 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{capgBeamer}[2016/10/03 v0.0.1 Slides]
-
 \LoadClass[xcolor={usenames,dvipsnames}]{beamer}
-\RequirePackage[T1]{fontenc}
-\RequirePackage[utf8]{inputenc}
-\RequirePackage{amsmath, mathtools}
-\RequirePackage{amssymb, mathrsfs, dsfont}
-\RequirePackage{amsthm}
-\RequirePackage{graphicx, graphics, color}
-\RequirePackage{microtype}
-\RequirePackage{lmodern}
-\RequirePackage{exscale}
-\RequirePackage{booktabs}
-\RequirePackage{xparse, xifthen}
+\RequirePackage{stdPack}
+\RequirePackage{capg_slides}
+% ----------
 \RequirePackage{tikz}
+\RequirePackage{amsthm}
 \usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit,petri}
 \RequirePackage{tcolorbox}
 \RequirePackage{listings}
 \RequirePackage{lstMatlabJulia}
-\RequirePackage{capg_slides}
