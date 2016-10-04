@@ -11,7 +11,7 @@
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{tuebingenDiss}[2016/10/03 v0.0.2 Thesis class]
+\ProvidesClass{tuebingenDiss}[2016/10/03 v0.0.3 Thesis class]
 
 \LoadClass[a5paper, twoside, BCOR=1cm, DIV=calc]{scrreprt}
 % \KOMAoptions{DIV=last}
@@ -35,7 +35,7 @@
 %  requirements of the University of Tübingen.
 % ----------------------------------------------------------------------
 \RequirePackage[ngerman, english]{babel}
-\newcommand*{\notdoneyet}{currently not set. Please fix this.}
+\newcommand*{\notdoneyet}{Currently not set. Please fix this.}
 \newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}
 \newcommand*{\@supervisor}{\texttt{\string\supervisor} \notdoneyet}
 \newcommand*{\supervisorTwo}[1]{\gdef\@supervisorTwo{#1}}
