@@ -17,12 +17,18 @@
   keywordstyle=\bfseries\color{blue},
   stringstyle=\color{magenta},
   commentstyle=\color{ForestGreen},
+  morecomment=[n]{\%\{}{\}\%},%
   numbers=left,
   numberstyle=\small\ttfamily,
   stepnumber=1,
   numbersep=10pt,
   basicstyle=\ttfamily,
   showstringspaces = false,
+%   inputencoding    = utf8,
+%  extendedchars    = true,
+%  literate         = {%}{\%}1,
+  % {ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 
+  % {ß}{{\ss}}1 {Ä}{{\"A}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1,
 }
 
 \lstdefinelanguage{Julia}%
@@ -44,4 +50,8 @@
     stringstyle      = \color{magenta},
     commentstyle     = \color{ForestGreen},
     showstringspaces = false,
+    inputencoding    = utf8,
+    extendedchars    = true,
+    literate         = {∑}{\(\Sigma\)}1 {ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 
+                       {ß}{{\ss}}1 {Ä}{{\"A}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1,
 }
