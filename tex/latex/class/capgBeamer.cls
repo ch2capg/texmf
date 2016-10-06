@@ -14,6 +14,7 @@
 \ProvidesClass{capgBeamer}[2016/10/03 v0.0.1 Slides]
 \LoadClass[xcolor={usenames,dvipsnames}]{beamer}
 \RequirePackage{stdPack}
+\RequirePackage{mathMacr}
 \RequirePackage{capg_slides}
 % ----------
 \RequirePackage{tikz}
