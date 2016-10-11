@@ -11,7 +11,14 @@
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{stdPack}[2016/10/03 v0.1.0 standard packages]
+\ProvidesPackage{stdPack}[2016/10/11 v0.2.0 standard packages]
+
+\newif\ifmypackage@mathabxSupport
+\DeclareOption{mathabx}{\mypackage@mathabxSupporttrue}
+\DeclareOption{nomathabx}{\mypackage@mathabxSupportfalse}
+\ExecuteOptions{mathabx}
+\DeclareOption*{\PackageWarning{stdPack}{Unknown ‘\CurrentOption’}}
+\ProcessOptions\relax
 
 % ----------
 % non-math packages
@@ -32,7 +39,9 @@
 \RequirePackage{amssymb}
 \RequirePackage{mathrsfs}  
 \RequirePackage{bm}
-\RequirePackage{mathabx} 
+\ifmypackage@mathabxSupport
+  \RequirePackage{mathabx} 
+\fi
 % mathabx.sty in conjunction with the symbols above
 % adds to many fonts if used with beamer.cls.  
 % I should add an optional argument, to exclude this packages 
