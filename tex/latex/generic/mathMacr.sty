@@ -119,6 +119,33 @@
   {\prescript{#8}{#9}{\braketDPD*{#3}{#4}{#5}{#6}{#7}}}
   {\prescript{#8}{#9}{\braketDPD[#2]{#3}{#4}{#5}{#6}{#7}}}
 }
+\NewDocumentCommand\helperBraket{sO{}O{}O{}O{}O{}mmm}
+{\IfNoValueT{#8}{\PackageWarning{mathMacr}{Bad usage of braket}}
+  \IfBooleanTF #1
+  {
+    \IfNoValueTF{#9}
+    {
+      \prescript{#5}{#6}{\braketDPD*{#7}{}{#8}{#3}{#4}}
+    }
+    {
+      \prescript{#5}{#6}{\braketDPD*{#7}{#8}{#9}{#3}{#4}}
+    }
+  }
+  {
+    \IfNoValueTF{#9}
+    {
+      \prescript{#5}{#6}{\braketDPD[#2]{#7}{}{#8}{#3}{#4}}
+    }
+    {
+      \prescript{#5}{#6}{\braketDPD[#2]{#7}{#8}{#9}{#3}{#4}}
+    }
+  }
+}
+\NewDocumentCommand\newBraket{sO{}>{\SplitArgument{2}{|}}mO{}O{}O{}O{}}
+{\IfBooleanTF #1
+  {\helperBraket*[][#4][#5][#6][#7]#3}
+  {\helperBraket[#2][#4][#5][#6][#7]#3}
+}
 % ----------
 
 \DeclareDocumentCommand\od{O {} m m}{
