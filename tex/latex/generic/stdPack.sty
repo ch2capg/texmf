@@ -10,6 +10,7 @@
 %  Copyright (c) 2016 Christian Power.  All rights reserved.
 % ----------------------------------------------------------------------
 
+\NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{stdPack}[2016/10/03 v0.1.0 standard packages]
 
 % ----------
@@ -31,7 +32,16 @@
 \RequirePackage{amssymb}
 \RequirePackage{mathrsfs}  
 \RequirePackage{bm}
-% \RequirePackage{mathabx} % too many math symbols; choose between the three above
+\RequirePackage{mathabx} 
+% mathabx.sty in conjunction with the symbols above
+% adds to many fonts if used with beamer.cls.  
+% I should add an optional argument, to exclude this packages 
+% if necessary.
+% ----------
+% Perhaps useful for a workaround
+% \newcommand*\defeq{\mathop{\mathrel{:=}}}
+% \newcommand*\eqdef{\mathop{\mathrel{=:}}}
+% ----------
 \RequirePackage{dsfont}
 \RequirePackage{mathtools}
 
