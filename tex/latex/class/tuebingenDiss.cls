@@ -11,7 +11,7 @@
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{tuebingenDiss}[2016/10/11 v0.0.4 Thesis class]
+\ProvidesClass{tuebingenDiss}[2016/10/11 v0.0.5 Thesis class]
 
 % \LoadClass[a5paper, twoside, BCOR=1cm, DIV=calc]{scrreprt}
 \LoadClass[a5paper, DIV=calc]{scrbook}
@@ -26,6 +26,7 @@
 % Costume headers
 % --------------------------------------------------
 \RequirePackage{stdPack}
+\RequirePackage{hyph}
 \RequirePackage{capgPalatino}
 \RequirePackage[mathpazo]{flexisym}
 \RequirePackage{breqn}
