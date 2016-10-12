@@ -11,13 +11,16 @@
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{tuebingenDiss}[2016/10/03 v0.0.3 Thesis class]
+\ProvidesClass{tuebingenDiss}[2016/10/11 v0.0.4 Thesis class]
 
-\LoadClass[a5paper, twoside, BCOR=1cm, DIV=calc]{scrreprt}
+% \LoadClass[a5paper, twoside, BCOR=1cm, DIV=calc]{scrreprt}
+\LoadClass[a5paper, DIV=calc]{scrbook}
+% \KOMAoptions{headheight=28.56007pt, BCOR=1cm, DIV=last}
+% \recalctypearea
 % \KOMAoptions{DIV=last}
 \RequirePackage[colorlinks=true,pdfpagelabels]{hyperref}
 \hypersetup{linkcolor=blue, citecolor=blue}
-\RequirePackage{scrlayer-scrpage}
+\RequirePackage[headsepline=.5pt]{scrlayer-scrpage}
 \RequirePackage{enumitem}
 % --------------------------------------------------
 % Costume headers
@@ -29,6 +32,8 @@
 \RequirePackage{capgThm}
 \RequirePackage{bigChap} 
 \RequirePackage{mathMacr}
+
+\recalctypearea
 
 % ----------------------------------------------------------------------
 %  Creates the title page and the second page according to the 
