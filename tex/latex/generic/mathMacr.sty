@@ -65,10 +65,10 @@
 % ----------------------------------------------------------------------
 \NewDocumentCommand\inv{som}
 {\IfBooleanTF #1
-  {\deli*{#3}^{-1}}
+  {\deli*{#3}[-1]}
   {\IfNoValueTF{#2}
     {#3^{-1}}
-    {\deli[#2]{#3}^{-1}}
+    {\deli[#2]{#3}[-1]}
   }
 }
 % ----------------------------------------------------------------------
@@ -90,18 +90,30 @@
   {\prescript{#6}{#7}{\normDPD[#2]{#3}{#4}{#5}}}
 }
 % ----------
-\DeclarePairedDelimiterX\deli[1](){  % Delimiter
-  \ifblank{#1}{\dotarg}{#1}
+\DeclarePairedDelimiterXPP\deliDPD[3]{}() % Delimiter
+{\ifblank{#2}{}{^{#2}}\ifblank{#3}{}{_{#3}}}
+{\ifblank{#1}{\dotarg}{#1}}
+\NewDocumentCommand\deli{sO{}mO{}O{}O{}O{}}
+{\IfBooleanTF #1
+  {\prescript{#6}{#7}{\deliDPD*{#3}{#4}{#5}}}
+  {\prescript{#6}{#7}{\deliDPD[#2]{#3}{#4}{#5}}}
 }
 \let\args\deli  % Arguments (usually with round brackets)
+% ----------
 \DeclarePairedDelimiterX\cbr[1]\{\}{
   \ifblank{#1}{\dotarg}{#1}
 }
 \DeclarePairedDelimiterX\sbr[1][]{
   \ifblank{#1}{\dotarg}{#1}
 }
-\DeclarePairedDelimiterX\abr[1]\langle\rangle{
-  \ifblank{#1}{\dotarg}{#1}
+% ----------
+\DeclarePairedDelimiterXPP\abrDPD[3]{}\langle\rangle % Delimiter
+{\ifblank{#2}{}{^{#2}}\ifblank{#3}{}{_{#3}}}
+{\ifblank{#1}{\dotarg}{#1}}
+\NewDocumentCommand\abr{sO{}mO{}O{}O{}O{}}
+{\IfBooleanTF #1
+  {\prescript{#6}{#7}{\abrDPD*{#3}{#4}{#5}}}
+  {\prescript{#6}{#7}{\abrDPD[#2]{#3}{#4}{#5}}}
 }
 % ----------
 \providecommand\given{}  % just to make sure it exists
