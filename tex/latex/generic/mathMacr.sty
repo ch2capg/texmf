@@ -10,7 +10,7 @@
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{mathMacr}[2016/10/13 v0.8.0 math macros]
+\ProvidesPackage{mathMacr}[2016/10/13 v0.9.0 math macros]
 
 \newcommand*\Q{\mathds{Q}}
 \newcommand*\Z{\mathds{Z}}
@@ -62,6 +62,15 @@
 \DeclareMathOperator\tr{trace}
 \DeclareMathOperator\sgn{sgn}
 \DeclareMathOperator\const{const}
+% ----------------------------------------------------------------------
+\NewDocumentCommand\inv{som}
+{\IfBooleanTF #1
+  {\deli*{#3}^{-1}}
+  {\IfNoValueTF{#2}
+    {#3^{-1}}
+    {\deli[#2]{#3}^{-1}}
+  }
+}
 % ----------------------------------------------------------------------
 \DeclarePairedDelimiterXPP\absDPD[3]{}\lvert\rvert
 {\ifblank{#2}{}{^{#2}}\ifblank{#3}{}{_{#3}}}
