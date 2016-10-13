@@ -1,17 +1,16 @@
 %  Revision history
 %  --------------------------------------------------
 %
-%       Revised by Christian Power September 2016
-%       Revised by Christian Power August 2016
+%       Revised by Christian Power August - October 2016
 %       Originally written by Christian Power
-%            (power22c@gmail.com) 17.08.2016
+%            (power22c@gmail.com) August 2016
 % 
 %  Math macros for my math papers and PhD.
 %  Copyright (c) 2016 Christian Power.  All rights reserved.
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{mathMacr}[2016/09/26 v0.7.0 math macros]
+\ProvidesPackage{mathMacr}[2016/10/13 v0.8.0 math macros]
 
 \newcommand*\Q{\mathds{Q}}
 \newcommand*\Z{\mathds{Z}}
@@ -114,8 +113,9 @@
   \ifblank{#2}{\,\delimsize\vert\,\mathopen{}}
   {\,\delimsize\lvert\,\mathopen{}#2\,\delimsize\rvert\,\mathopen{}}
   \ifblank{#3}{\dotarg}{#3} }
-\NewDocumentCommand\braket{sO{}mO{}mO{}O{}O{}O{}}
-{\IfBooleanTF #1
+\NewDocumentCommand\oldBraket{sO{}mO{}mO{}O{}O{}O{}}
+{\PackageWarning{mathMacr}{oldBraket is depreciated.  Use braket}
+  \IfBooleanTF #1
   {\prescript{#8}{#9}{\braketDPD*{#3}{#4}{#5}{#6}{#7}}}
   {\prescript{#8}{#9}{\braketDPD[#2]{#3}{#4}{#5}{#6}{#7}}}
 }
@@ -141,7 +141,7 @@
     }
   }
 }
-\NewDocumentCommand\newBraket{sO{}>{\SplitArgument{2}{|}}mO{}O{}O{}O{}}
+\NewDocumentCommand\braket{sO{}>{\SplitArgument{2}{|}}mO{}O{}O{}O{}}
 {\IfBooleanTF #1
   {\helperBraket*[][#4][#5][#6][#7]#3}
   {\helperBraket[#2][#4][#5][#6][#7]#3}
