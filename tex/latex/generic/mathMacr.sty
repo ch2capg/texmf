@@ -100,6 +100,15 @@
 }
 \let\args\deli  % Arguments (usually with round brackets)
 % ----------
+\DeclarePairedDelimiterXPP\formArgDPD[4]{#1}() % Multilinear form
+{\ifblank{#3}{}{^{#3}}\ifblank{#4}{}{_{#4}}}
+{#2}
+\NewDocumentCommand\formArg{sO{}mmO{}O{}O{}O{}}
+{\IfBooleanTF #1
+  {\prescript{#7}{#8}{\formArgDPD*{#3}{#4}{#5}{#6}}}
+  {\prescript{#7}{#8}{\formArgDPD[#2]{#3}{#4}{#5}{#6}}}
+}
+% ----------
 \DeclarePairedDelimiterX\cbr[1]\{\}{
   \ifblank{#1}{\dotarg}{#1}
 }
