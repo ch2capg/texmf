@@ -22,6 +22,7 @@
 \hypersetup{linkcolor=blue, citecolor=blue}
 \RequirePackage[headsepline=.5pt]{scrlayer-scrpage}
 \RequirePackage{enumitem}
+\RequirePackage[titles]{tocloft}
 % --------------------------------------------------
 % Costume headers
 % --------------------------------------------------
