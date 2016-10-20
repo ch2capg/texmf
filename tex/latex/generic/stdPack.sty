@@ -32,6 +32,7 @@
 \RequirePackage{etoolbox}  
 \RequirePackage{xparse}
 \RequirePackage{graphicx} 
+\RequirePackage{subfig}
 \RequirePackage[usenames,dvipsnames]{xcolor} 
 % ----------
 % Math packages
@@ -39,20 +40,20 @@
 \RequirePackage{amssymb}
 \RequirePackage{mathrsfs}  
 \RequirePackage{bm}
-\ifmypackage@mathabxSupport
-  \RequirePackage{mathabx} 
-\fi
 % mathabx.sty in conjunction with the symbols above
 % adds to many fonts if used with beamer.cls.  
 % I should add an optional argument, to exclude this packages 
 % if necessary.
+\ifmypackage@mathabxSupport
+  \RequirePackage{mathabx} 
+\fi
+\RequirePackage{dsfont}
+\RequirePackage{mathtools}
 % ----------
-% Perhaps useful for a workaround
+% Perhaps useful for a workaround if no mathtools.sty are there
 % \newcommand*\defeq{\mathop{\mathrel{:=}}}
 % \newcommand*\eqdef{\mathop{\mathrel{=:}}}
 % ----------
-\RequirePackage{dsfont}
-\RequirePackage{mathtools}
 
 % Provides \RedeclareMathOperator
 \makeatletter
