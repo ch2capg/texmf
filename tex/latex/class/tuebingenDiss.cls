@@ -29,6 +29,7 @@
 \RequirePackage{stdPack}
 \RequirePackage{hyph}
 \RequirePackage{capgPalatino}
+% \RequirePackage[small,euler-digits,euler-hat-accent,T1]{eulervm}
 \RequirePackage[mathpazo]{flexisym}
 \RequirePackage{breqn}
 \RequirePackage{capgThm}
