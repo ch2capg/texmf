@@ -52,6 +52,8 @@
 \newcommand*{\@dean}{\texttt{\string\dean} \notdoneyet}
 \newcommand*{\gebOrt}[1]{\gdef\@gebOrt{#1}}
 \newcommand*{\@gebOrt}{\texttt{\string\gebOrt} \notdoneyet}
+\newcommand*\academicDegree[1]{\gdef\@academicDegree{#1}}
+\newcommand*\@academicDegree{ }
 \def\mysplit#1.#2.#3.{\gdef\@dissDay{#1}\gdef\@dissMonth{#2}\gdef\@dissYear{#3}}
 \gdef\splitdate#1{\expandafter\mysplit#1.}
 \newcommand*{\dissDate}{\@dissDay.\@dissMonth.\@dissYear}
@@ -69,7 +71,7 @@
     (Dr.\ rer.\ nat.) \\
     \vfill
     vorgelegt von \\[1ex]
-    \textbf{\@author} \\[1ex]
+    \@academicDegree\ \@author \\[1ex]
     aus \@gebOrt
     \vfill
     Tübingen \\ \@dissYear
