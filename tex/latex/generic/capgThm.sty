@@ -17,7 +17,8 @@
 \RequirePackage{tikz}
 \RequirePackage[framemethod=tikz]{mdframed}
 
-\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+\mdfsetup{skipabove=\topskip plus .1\topskip minus .3\topskip, 
+  skipbelow=\topskip plus .3\topskip minus .3\topskip}
 \global\mdfdefinestyle{satzmdf}{
   outerlinewidth=0.4pt,
   outerlinecolor=blue,
