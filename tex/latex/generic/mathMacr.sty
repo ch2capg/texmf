@@ -203,6 +203,11 @@
     {\deli[#2]{#4}}
   }
 }
+\NewDocumentCommand\hoelderN{sO{}mO{}mO{}}
+{\IfBooleanTF #1
+  {\norm*{#5}[#6][\hoelder{#3}{#4}]}
+  {\norm[#2]{#5}[#6][\hoelder{#3}{#4}]}
+}
 \NewDocumentCommand\sobolevSymb{mm}{
   \IfValueTF{#2}{W^{#1,#2}}{H^{#1}}
 }
