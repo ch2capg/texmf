@@ -195,12 +195,19 @@
     \frac{\del\ifblank{#1}{}{^{#1}} #2}{\del #3\ifblank{#1}{}{^{#1}}}
   }{#4}
 }
+\DeclareDocumentCommand\ppd{O {} m m m}{
+  \frac{\del\ifblank{#1}{^{2}}{^{#1}} #2}{\del #3 \del #4 }
+}
+\DeclareDocumentCommand\evalPpd{O {} m m m m}{
+  \eval*{
+    \frac{\del\ifblank{#1}{^{2}}{^{#1}} #2}{\del #3 \del #4 }
+  }{#5}
+}
 \NewDocumentCommand\hoelder{sO{}mm}  % Hölder spaces
-{C^{#3}
-  \ifblank{#4}{}{
+{\ifblank{#4}{C^{#3}}{
     \IfBooleanTF #1
-    {\deli*{#4}}
-    {\deli[#2]{#4}}
+    {\formArg*{C^{#3}}{#4}}
+    {\formArg[#2]{C^{#3}}{#4}}
   }
 }
 \NewDocumentCommand\hoelderN{sO{}mO{}mO{}}
@@ -212,11 +219,10 @@
   \IfValueTF{#2}{W^{#1,#2}}{H^{#1}}
 }
 \NewDocumentCommand\sobolev{sO{} >{\SplitArgument{1}{,}}m m}
-{\sobolevSymb #3
-  \ifblank{#4}{}{
+{\ifblank{#4}{\sobolevSymb #3}{
     \IfBooleanTF #1
-    {\deli*{#4}}
-    {\deli[#2]{#4}}
+    {\formArg*{\sobolevSymb #3}{#4}}
+    {\formArg[#2]{\sobolevSymb #3}{#4}}
   }
 }
 \NewDocumentCommand\sobolevN{sO{}mO{}mO{}}
