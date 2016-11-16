@@ -203,13 +203,8 @@
     \frac{\del\ifblank{#1}{^{2}}{^{#1}} #2}{\del #3 \del #4 }
   }{#5}
 }
-\NewDocumentCommand\hoelder{sO{}mm}  % Hölder spaces
-{\ifblank{#4}{C^{#3}}{
-    \IfBooleanTF #1
-    {\formArg*{C^{#3}}{#4}}
-    {\formArg[#2]{C^{#3}}{#4}}
-  }
-}
+\NewDocumentCommand\hoelder{mm}  % Hölder spaces
+{C^{#1}\ifblank{#2}{}{(#2)}}
 \NewDocumentCommand\hoelderN{sO{}mO{}mO{}}
 {\IfBooleanTF #1
   {\norm*{#5}[#6][\hoelder{#3}{#4}]}
@@ -225,15 +220,18 @@
     {\formArg[#2]{\sobolevSymb #3}{#4}}
   }
 }
+\NewDocumentCommand\sobolevSimple{>{\SplitArgument{1}{,}}mm}
+{\sobolevSymb #1 \ifblank{#2}{}{(#2)}
+}
 \NewDocumentCommand\sobolevN{sO{}mO{}mO{}}
 {\IfBooleanTF #1
-  {\norm*{#5}[#6][\sobolev{#3}{#4}]}
-  {\norm[#2]{#5}[#6][\sobolev{#3}{#4}]}
+  {\norm*{#5}[#6][\sobolevSimple{#3}{#4}]}
+  {\norm[#2]{#5}[#6][\sobolevSimple{#3}{#4}]}
 }
 \NewDocumentCommand\sobolevSN{sO{}mO{}mO{}}
 {\IfBooleanTF #1
-  {\abs*{#5}[#6][\sobolev{#3}{#4}]}
-  {\abs[#2]{#5}[#6][\sobolev{#3}{#4}]}
+  {\abs*{#5}[#6][\sobolevSimple{#3}{#4}]}
+  {\abs[#2]{#5}[#6][\sobolevSimple{#3}{#4}]}
 }
 \NewDocumentCommand\lebesgue{sO{}mm}
 {L^{#3}
@@ -243,8 +241,8 @@
 }
 \NewDocumentCommand\lebesgueN{sO{}mO{}mO{}}
 {\IfBooleanTF #1
-  {\norm*{#5}[#6][\lebesgue{#3}{#4}]}
-  {\norm[#2]{#5}[#6][\lebesgue{#3}{#4}]}
+  {\norm*{#5}[#6][L^{#3}\ifblank{#4}{}{(#4)}]}
+  {\norm[#2]{#5}[#6][L^{#3}\ifblank{#4}{}{(#4)}]}
 }
 % \DeclareDocumentCommand{\Lnorm}{ O{} O{2} m}{ 
 %   \lVert #3\rVert_{ 
