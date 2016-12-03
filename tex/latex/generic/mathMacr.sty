@@ -73,6 +73,22 @@
     {\deli[#2]{#3}[-1]}
   }
 }
+\NewDocumentCommand\trans{som}
+{\IfBooleanTF #1
+  {\deli*{#3}[][][\mathrm{t}]}
+  {\IfNoValueTF{#2}
+    {\prescript{\mathrm{t}}{}{#3}}
+    {\deli[#2]{#3}[][][\mathrm{t}]}
+  }
+}
+\NewDocumentCommand\landau{som}
+{\IfBooleanTF #1
+  {\fromArg*{\mathcal{O}}{#3}}
+  {\IfNoValueTF{#2}
+    {\mathcal{O}(#3)}
+    {\fromArg[#2]{\mathcal{O}}{#3}}
+  }
+}
 % ----------------------------------------------------------------------
 \DeclarePairedDelimiterXPP\absDPD[3]{}\lvert\rvert
 {\ifblank{#2}{}{^{#2}}\ifblank{#3}{}{_{#3}}}
