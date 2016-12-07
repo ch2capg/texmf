@@ -38,6 +38,8 @@
 
 \recalctypearea
 
+\renewcommand*\labelitemi{\(\bullet\)}
+
 % ----------------------------------------------------------------------
 %  Creates the title page and the second page according to the 
 %  requirements of the University of Tübingen.

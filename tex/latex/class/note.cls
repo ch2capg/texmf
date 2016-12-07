@@ -26,3 +26,5 @@
 
 \recalctypearea
 \RequirePackage[ngerman, english]{babel}
+
+\renewcommand\labelitemi{\(\bullet\)}
