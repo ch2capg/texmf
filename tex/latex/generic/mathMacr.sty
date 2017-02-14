@@ -256,10 +256,12 @@
     \IfBooleanTF #1 {\deli*{#4}}{\deli[#2]{#4}}
   }
 }
+\NewDocumentCommand\lebesgueSimple{mm}
+{L^{#1}\ifblank{#2}{}{(#2)}}
 \NewDocumentCommand\lebesgueN{sO{}mO{}mO{}}
 {\IfBooleanTF #1
-  {\norm*{#5}[#6][L^{#3}\ifblank{#4}{}{(#4)}]}
-  {\norm[#2]{#5}[#6][L^{#3}\ifblank{#4}{}{(#4)}]}
+  {\norm*{#5}[#6][\lebesgueSimple{#3}{#4}]}
+  {\norm[#2]{#5}[#6][\lebesgueSimple{#3}{#4}]}
 }
 % \DeclareDocumentCommand{\Lnorm}{ O{} O{2} m}{ 
 %   \lVert #3\rVert_{ 
