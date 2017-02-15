@@ -81,20 +81,15 @@
 \end{titlepage}
 \phantom{.}
 \vfill
-\begin{otherlanguage}{ngerman}
-  \noindent Gedruckt mit Genehmigung der 
-  Mathe\-mat\-isch\--Na\-tur\-wis\-sen\-scha\-ft\-li\-chen 
-  Fakultät der Eberhard Karls Universität Tübingen \\[2ex]
-  Tag der mündlichen Qualifikation: \hfill \dissDate \\
-  Dekan: \hfill  \@dean \\
-  1. Berichterstatter: \hfill \@supervisor \\
-  2. Berichterstatter: \hfill \@supervisorTwo 
-%   \phantom{.} Tag der mündlichen Qualifikation: \dissDate \\
-%   \begin{tabular}{ll}
-%     Dekan: &  \@dean \\
-%     1. Berichterstatter: & \@supervisor \\
-%     2. Berichterstatter: & \@supervisorTwo 
-%   \end{tabular} 
-\end{otherlanguage}
+\cleardoublepage
+% \begin{otherlanguage}{ngerman}
+%   \noindent Veröffentlicht mit Genehmigung der 
+%   Mathe\-mat\-isch\--Na\-tur\-wis\-sen\-scha\-ft\-li\-chen 
+%   Fakultät der Eberhard Karls Universität Tübingen \\[2ex]
+%   Tag der mündlichen Qualifikation: \hfill \dissDate \\
+%   Dekan: \hfill  \@dean \\
+%   1. Berichterstatter: \hfill \@supervisor \\
+%   2. Berichterstatter: \hfill \@supervisorTwo 
+% \end{otherlanguage}
 }
 \endinput
