@@ -18,8 +18,6 @@
 % \KOMAoptions{headheight=28.56007pt, BCOR=1cm, DIV=last}
 % \recalctypearea
 % \KOMAoptions{DIV=last}
-\RequirePackage[colorlinks=true,pdfpagelabels]{hyperref}
-\hypersetup{linkcolor=blue, citecolor=blue}
 \RequirePackage[headsepline=.5pt]{scrlayer-scrpage}
 \RequirePackage{enumitem}
 \RequirePackage[titles]{tocloft}
@@ -35,6 +33,8 @@
 \RequirePackage{capgThm}
 \RequirePackage{bigChap} 
 \RequirePackage{mathMacr}
+\RequirePackage[colorlinks=true,pdfpagelabels]{hyperref}
+\hypersetup{linkcolor=blue, citecolor=blue}
 
 \recalctypearea
 
