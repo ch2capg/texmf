@@ -34,7 +34,8 @@
 \RequirePackage{bigChap} 
 \RequirePackage{mathMacr}
 \RequirePackage[colorlinks=true,pdfpagelabels]{hyperref}
-\hypersetup{linkcolor=blue, citecolor=blue}
+% \hypersetup{linkcolor=blue, citecolor=blue}
+\hypersetup{linkcolor=black, citecolor=black}
 
 \recalctypearea
 
@@ -79,9 +80,8 @@
     Tübingen \\ \@dissYear
   \end{otherlanguage}
 \end{titlepage}
-\phantom{.}
-\vfill
-\cleardoublepage
+% \phantom{.}
+% \vfill
 % \begin{otherlanguage}{ngerman}
 %   \noindent Veröffentlicht mit Genehmigung der 
 %   Mathe\-mat\-isch\--Na\-tur\-wis\-sen\-scha\-ft\-li\-chen 
@@ -91,5 +91,6 @@
 %   1. Berichterstatter: \hfill \@supervisor \\
 %   2. Berichterstatter: \hfill \@supervisorTwo 
 % \end{otherlanguage}
+\cleardoublepage
 }
 \endinput
