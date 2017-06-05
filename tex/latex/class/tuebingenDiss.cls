@@ -37,6 +37,11 @@
 % \hypersetup{linkcolor=blue, citecolor=blue}
 \hypersetup{linkcolor=black, citecolor=black}
 
+\RequirePackage{epigraph}
+\RequirePackage{newfloat}
+\RequirePackage{caption}
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
 \recalctypearea
 
 \renewcommand*\labelitemi{\(\bullet\)}
