@@ -15,5 +15,5 @@ Christian Power. powerTwoTwoc at gmail.com.  Replace Two with 2 and at with @.
 License
 ----------------------------------------------------------------------
 
-All my self made BibTeX data files and the LaTeX files are licensed under GPL.
-Cf.  LICENSE.txt 
+All my self made BibTeX data files and the LaTeX files are licensed under 
+[GPL](LICENSE.md).
