@@ -14,9 +14,12 @@
 \ProvidesPackage{stdPack}[2016/10/11 v0.2.0 standard packages]
 
 \newif\ifmypackage@mathabxSupport
+\newif\ifmypackage@slideSupport
 \DeclareOption{mathabx}{\mypackage@mathabxSupporttrue}
 \DeclareOption{nomathabx}{\mypackage@mathabxSupportfalse}
-\ExecuteOptions{mathabx}
+\DeclareOption{slide}{\mypackage@slideSupporttrue}
+\DeclareOption{noslide}{\mypackage@slideSupportfalse}
+\ExecuteOptions{mathabx, noslide}
 \DeclareOption*{\PackageWarning{stdPack}{Unknown ‘\CurrentOption’}}
 \ProcessOptions\relax
 
@@ -33,7 +36,11 @@
 \RequirePackage{xparse}
 \RequirePackage{graphicx} 
 \RequirePackage{subfig}
-\RequirePackage[usenames,dvipsnames]{xcolor} 
+\ifmypackage@slideSupport
+  \RequirePackage{xcolor} 
+\else
+  \RequirePackage[usenames,dvipsnames]{xcolor} 
+\fi
 % ----------
 % Math packages
 \RequirePackage{amsmath}
