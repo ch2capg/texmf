@@ -111,22 +111,23 @@
 % \addtobeamertemplate{parDifEq begin}{\vspace{0.1cm}}
 % \addtobeamertemplate{parDifEq end}{\vspace{0.1cm}}
 
-\setbeamertemplate{parDifEq begin}{%
-  {%
-    % \inserttheoremheadfont
-    \inserttheoremname
-    % \inserttheoremnumber
-    % \ifx\inserttheoremaddition\empty\relax\else\(\inserttheoremaddition)\fi%
-    \inserttheorempunctuation}~%
-  }
-\setbeamertemplate{parDifEq end}{\par}
-\setbeamertemplate{theorem begin}{%
-  {%
-    \vspace*{-1ex}
-    % \inserttheoremheadfont
-    \textsf{\color{blue}{\inserttheoremname}}%
-    % \inserttheoremnumber
-    % \ifx\inserttheoremaddition\empty\relax\else\(\inserttheoremaddition)\fi%
-    \inserttheorempunctuation}~%
-  }
-\setbeamertemplate{theorem end}{\par}
+% \setbeamertemplate{parDifEq begin}{%
+%   {%
+%     % \inserttheoremheadfont
+%     \inserttheoremname
+%     % \inserttheoremnumber
+%     % \ifx\inserttheoremaddition\empty\relax\else\(\inserttheoremaddition)\fi%
+%     \inserttheorempunctuation}~%
+%   }
+%     \setbeamertemplate{parDifEq end}{\par}
+\addtobeamertemplate{theorem begin}{\vspace*{-1.5ex}}{}
+% \setbeamertemplate{theorem begin}{%
+%   {%
+%     \vspace*{-1ex}
+%     % \inserttheoremheadfont
+%     % \textsf{\color{blue}{\inserttheoremname}}%
+%     % \inserttheoremnumber
+%     % \ifx\inserttheoremaddition\empty\relax\else\(\inserttheoremaddition)\fi%
+%     % \inserttheorempunctuation}~%
+%   }
+% \setbeamertemplate{theorem end}{\par}
