@@ -16,8 +16,8 @@
 \LoadClass{capgBeamer}
 \RequirePackage{hyph}
 % \RequirePackage[mathpazo]{flexisym}
-% \RequirePackage{breqn}
-% \RequirePackage{capgThm}
+\RequirePackage{breqn}
+\RequirePackage{slideThm}
 \RequirePackage{mathMacr}
 \RequirePackage[ngerman, english]{babel}
 

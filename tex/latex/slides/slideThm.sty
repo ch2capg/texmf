@@ -1,0 +1,132 @@
+%  Revision history
+%  --------------------------------------------------
+% 
+%       Revised by Christian Power July 2016
+%       Originally written by Christian Power
+%            (power22c@gmail.com) 05.06.2017
+% 
+%  Produce nice lines next to the theorems for the beamer class.
+%  Copyright (c) 2017 Christian Power.  All rights reserved.
+% ----------------------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{slideThm}[2017/06/05 v0.0.0 Hatcher style for theorems]
+
+\RequirePackage[framemethod=tikz]{mdframed}
+
+% \mdfsetup{skipabove=1pt plus 1pt minus .5pt, 
+%   skipbelow=\topskip plus .3\topskip minus .3\topskip}
+\global\mdfdefinestyle{satzmdf}{
+  outerlinewidth=1pt,
+  outerlinecolor=blue,% outerlinecolor=blue,
+  innerlinewidth=1pt,
+  innerlinecolor=blue,% innerlinecolor=blue,
+  middlelinewidth=.5pt,
+  middlelinecolor=white,
+  bottomline=false,
+  topline=false,
+  rightline=false
+}
+\global\mdfdefinestyle{defimdf}{
+  outerlinewidth=.8pt,
+  outerlinecolor=blue,
+  innerlinewidth=.8pt,
+  innerlinecolor=blue,
+  middlelinewidth=.8pt,
+  middlelinecolor=white,
+  bottomline=false,
+  topline=false,
+  rightline=false
+}
+
+% ----------------------------------------------------------------------
+\newtheoremstyle{satz}
+{-\topsep}                   %Space above
+{2ex plus 2ex minus 2ex}                   %Space below
+{\normalfont\itshape}           %Body font
+{}                      %Indent amount (empty = no indent,
+                          %\parindent = para indent)
+{\normalfont\sffamily\bfseries}  %Thm head font
+{.}                     %Punctuation after thm head
+{.5em}              %Space after thm head: " " = normal interword
+                          %space; \newline = linebreak
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+                          %Thm head spec (can be left empty, meaning
+                          %`normal')
+\newtheoremstyle{defi}
+{-1ex}                   %Space above
+{.1ex}                   %Space below
+{\normalfont}            %Body font
+{}                      %Indent amount (empty = no indent,
+                          %\parindent = para indent)
+{\normalfont\sffamily\bfseries}  %Thm head font
+{.}                     %Punctuation after thm head
+{.5em}              %Space after thm head: " " = normal interword
+                          %space; \newline = linebreak
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+                          %Thm head spec (can be left empty, meaning
+                          %`normal')
+\newtheoremstyle{defiNoFrame}
+{1ex plus .5ex minus .5ex}                   %Space above
+{3ex plus 1ex minus 2ex}                   %Space below
+{\normalfont}           %Body font
+{}                      %Indent amount (empty = no indent,
+                        %\parindent = para indent)
+{\normalfont\sffamily\bfseries}  %Thm head font
+{.}                     %Punctuation after thm head
+{.5em}              %Space after thm head: " " = normal interword
+                        %space; \newline = linebreak
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+                        %Thm head spec (can be left empty, meaning
+                        %`normal')
+% ------------------------------
+\theoremstyle{satz}
+\newtheorem{lemmaSlide}{Lemma}[section]
+\surroundwithmdframed[style=satzmdf]{lemmaSlide}
+\newtheorem{proposition}[lemmaSlide]{Proposition}
+\surroundwithmdframed[style=satzmdf]{proposition}
+\newtheorem{corollarySlide}[lemmaSlide]{Corollary}
+\surroundwithmdframed[style=satzmdf]{corollarySlide}
+\newtheorem{theoremSlide}[lemmaSlide]{Theorem}
+\surroundwithmdframed[style=satzmdf]{theoremSlide}
+\theoremstyle{defi}
+\newtheorem{definitionSlide}[lemmaSlide]{Definition}
+\surroundwithmdframed[style=defimdf]{definitionSlide}
+\newtheorem*{definitionSlide*}{Definition}
+\surroundwithmdframed[style=defimdf]{definitionSlide*}
+\newtheorem{parDifEq}[lemmaSlide]{PDE}
+\surroundwithmdframed[style=defimdf]{parDifEq}
+\newtheorem*{parDifEq*}{PDE}
+\surroundwithmdframed[style=defimdf]{parDifEq*}
+% \newtheorem{assumption}[lemmaSlide]{Assumption}
+% \surroundwithmdframed[style=defimdf,
+% outerlinecolor=red,
+% innerlinecolor=red]{assumption}
+\theoremstyle{defiNoFrame}
+\newtheorem{remarkSlide}[lemmaSlide]{Remark}
+\newtheorem{problemSlide}[lemmaSlide]{Problem}
+\newtheorem{assumption}[lemmaSlide]{Assumption}
+\newtheorem{exampleSlide}[lemmaSlide]{Example}
+
+% \addtobeamertemplate{parDifEq begin}{\vspace{0.1cm}}
+% \addtobeamertemplate{parDifEq end}{\vspace{0.1cm}}
+
+\setbeamertemplate{parDifEq begin}{%
+  {%
+    % \inserttheoremheadfont
+    \inserttheoremname
+    % \inserttheoremnumber
+    % \ifx\inserttheoremaddition\empty\relax\else\(\inserttheoremaddition)\fi%
+    \inserttheorempunctuation}~%
+  }
+\setbeamertemplate{parDifEq end}{\par}
+\setbeamertemplate{theorem begin}{%
+  {%
+    \vspace*{-1ex}
+    % \inserttheoremheadfont
+    \textsf{\color{blue}{\inserttheoremname}}%
+    % \inserttheoremnumber
+    % \ifx\inserttheoremaddition\empty\relax\else\(\inserttheoremaddition)\fi%
+    \inserttheorempunctuation}~%
+  }
+\setbeamertemplate{theorem end}{\par}
