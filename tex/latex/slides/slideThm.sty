@@ -17,11 +17,11 @@
 \mdfsetup{skipabove=\topskip plus .3\topskip minus .3\topskip,
   skipbelow=\topskip plus .3\topskip minus .3\topskip}
 \global\mdfdefinestyle{satzmdf}{
-  outerlinewidth=1pt,
+  outerlinewidth=.8pt,
   outerlinecolor=blue,% outerlinecolor=blue,
-  innerlinewidth=1pt,
+  innerlinewidth=.8pt,
   innerlinecolor=blue,% innerlinecolor=blue,
-  middlelinewidth=.5pt,
+  middlelinewidth=.8pt,
   middlelinecolor=white,
   bottomline=false,
   topline=false,
@@ -83,8 +83,8 @@
 \theoremstyle{satz}
 \newtheorem{lemmaSlide}{Lemma}[section]
 \surroundwithmdframed[style=satzmdf]{lemmaSlide}
-\newtheorem{proposition}[lemmaSlide]{Proposition}
-\surroundwithmdframed[style=satzmdf]{proposition}
+\newtheorem{propositionSlide}[lemmaSlide]{Proposition}
+\surroundwithmdframed[style=satzmdf]{propositionSlide}
 \newtheorem{corollarySlide}[lemmaSlide]{Corollary}
 \surroundwithmdframed[style=satzmdf]{corollarySlide}
 \newtheorem{theoremSlide}[lemmaSlide]{Theorem}
@@ -94,10 +94,10 @@
 \surroundwithmdframed[style=defimdf]{definitionSlide}
 \newtheorem*{definitionSlide*}{Definition}
 \surroundwithmdframed[style=defimdf]{definitionSlide*}
-\newtheorem{parDifEq}[lemmaSlide]{PDE}
-\surroundwithmdframed[style=defimdf]{parDifEq}
-\newtheorem*{parDifEq*}{PDE}
-\surroundwithmdframed[style=defimdf]{parDifEq*}
+\newtheorem{parDifEqSlide}[lemmaSlide]{PDE}
+\surroundwithmdframed[style=defimdf]{parDifEqSlide}
+\newtheorem*{parDifEqSlide*}{PDE}
+\surroundwithmdframed[style=defimdf]{parDifEqSlide*}
 % \newtheorem{assumption}[lemmaSlide]{Assumption}
 % \surroundwithmdframed[style=defimdf,
 % outerlinecolor=red,
@@ -105,30 +105,56 @@
 \theoremstyle{defiNoFrame}
 \newtheorem{remarkSlide}[lemmaSlide]{Remark}
 \newtheorem{problemSlide}[lemmaSlide]{Problem}
-\newtheorem{assumption}[lemmaSlide]{Assumption}
+\newtheorem{assumptionSlide}[lemmaSlide]{Assumption}
 \newtheorem{exampleSlide}[lemmaSlide]{Example}
 
-% \addtobeamertemplate{parDifEq begin}{\vspace{0.1cm}}
-% \addtobeamertemplate{parDifEq end}{\vspace{0.1cm}}
+% Problem: mdframed.sty produces weird spacing
+% Correct spacing for the environments
 
-% \setbeamertemplate{parDifEq begin}{%
-%   {%
-%     % \inserttheoremheadfont
-%     \inserttheoremname
-%     % \inserttheoremnumber
-%     % \ifx\inserttheoremaddition\empty\relax\else\(\inserttheoremaddition)\fi%
-%     \inserttheorempunctuation}~%
-%   }
-%     \setbeamertemplate{parDifEq end}{\par}
-\addtobeamertemplate{theorem begin}{\vspace*{-1.5ex}}{}
-% \addtobeamertemplate{theorem end}{}{\vspace*{2cm}}
-% \setbeamertemplate{theorem begin}{%
-%   {%
-%     \vspace*{-1ex}
-%     % \inserttheoremheadfont
-%     % \textsf{\color{blue}{\inserttheoremname}}%
-%     % \inserttheoremnumber
-%     % \ifx\inserttheoremaddition\empty\relax\else\(\inserttheoremaddition)\fi%
-%     % \inserttheorempunctuation}~%
-%   }
-% \setbeamertemplate{theorem end}{\par}
+\addtobeamertemplate{theorem begin}{\vspace*{-1.9ex}}{}
+\addtobeamertemplate{theorem end}{\vspace*{-.6ex}}{}
+
+\newlength{\hatcherBoxBegin}
+\setlength{\hatcherBoxBegin}{-.5ex plus .25ex minus .5ex}
+\newlength{\hatcherBoxEnd}
+\setlength{\hatcherBoxEnd}{1ex plus .25ex minus .5ex}
+\newlength{\normalBoxBegin}
+\setlength{\normalBoxBegin}{1.25ex plus .25ex minus .75ex}
+\newlength{\normalBoxEnd}
+\setlength{\normalBoxEnd}{.75ex plus .25ex minus .5ex}
+
+% White space for a Hatcher box
+\newcommand\wsHatcher[2]{
+  \newenvironment{#2}
+  {\vspace*{\hatcherBoxBegin}\begin{#1}}
+  {\end{#1}\vspace*{\hatcherBoxEnd}}
+}
+% renewenvironment variant
+\newcommand\wsHatcherRN[2]{
+  \renewenvironment{#2}
+  {\vspace*{\hatcherBoxBegin}\begin{#1}}
+  {\end{#1}\vspace*{\hatcherBoxEnd}}
+}
+% White space for normal box
+\newcommand\wsNormalBox[2]{
+  \newenvironment{#2}
+  {\vspace*{\normalBoxBegin}\begin{#1}}
+  {\end{#1}\vspace*{\normalBoxEnd}}
+}
+% renewenvironment variant
+\newcommand\wsNormalBoxRN[2]{
+  \renewenvironment{#2}
+  {\vspace*{\normalBoxBegin}\begin{#1}}
+  {\end{#1}\vspace*{\normalBoxEnd}}
+}
+\wsHatcher{propositionSlide}{proposition}
+\wsHatcherRN{corollarySlide}{corollary}
+\wsHatcherRN{theoremSlide}{theorem}
+\wsHatcherRN{definitionSlide}{definition}
+\wsHatcher{definitionSlide*}{definition*}
+\wsHatcher{parDifEqSlide}{parDifEq}
+\wsHatcher{parDifEqSlide*}{parDifEq*}
+\wsNormalBox{remarkSlide}{remark}
+\wsNormalBoxRN{problemSlide}{problem}
+\wsNormalBox{assumptionsSlide}{assumptions}
+\wsNormalBoxRN{exampleSlide}{example}
