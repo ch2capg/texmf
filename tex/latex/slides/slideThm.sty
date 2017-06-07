@@ -10,12 +10,12 @@
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{slideThm}[2017/06/05 v0.0.0 Hatcher style for theorems]
+\ProvidesPackage{slideThm}[2017/06/07 v0.0.1 Hatcher style for theorems]
 
 \RequirePackage[framemethod=tikz]{mdframed}
 
-% \mdfsetup{skipabove=1pt plus 1pt minus .5pt, 
-%   skipbelow=\topskip plus .3\topskip minus .3\topskip}
+\mdfsetup{skipabove=\topskip plus .3\topskip minus .3\topskip,
+  skipbelow=\topskip plus .3\topskip minus .3\topskip}
 \global\mdfdefinestyle{satzmdf}{
   outerlinewidth=1pt,
   outerlinecolor=blue,% outerlinecolor=blue,
@@ -43,7 +43,7 @@
 \newtheoremstyle{satz}
 {-\topsep}                   %Space above
 {2ex plus 2ex minus 2ex}                   %Space below
-{\normalfont\itshape}           %Body font
+{\normalfont}           %Body font
 {}                      %Indent amount (empty = no indent,
                           %\parindent = para indent)
 {\normalfont\sffamily\bfseries}  %Thm head font
@@ -55,7 +55,7 @@
                           %`normal')
 \newtheoremstyle{defi}
 {-1ex}                   %Space above
-{.1ex}                   %Space below
+{2ex plus 2ex minus 2ex}                   %Space below
 {\normalfont}            %Body font
 {}                      %Indent amount (empty = no indent,
                           %\parindent = para indent)
@@ -121,6 +121,7 @@
 %   }
 %     \setbeamertemplate{parDifEq end}{\par}
 \addtobeamertemplate{theorem begin}{\vspace*{-1.5ex}}{}
+% \addtobeamertemplate{theorem end}{}{\vspace*{2cm}}
 % \setbeamertemplate{theorem begin}{%
 %   {%
 %     \vspace*{-1ex}
