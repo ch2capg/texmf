@@ -10,7 +10,7 @@
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{note}[2016/10/13 v0.0.0 note class]
+\ProvidesClass{note}[2016/10/13 v0.0.1 note class]
 
 \LoadClass[a5paper, DIV=calc]{scrartcl}
 \RequirePackage[colorlinks=true,pdfpagelabels]{hyperref}
@@ -25,6 +25,6 @@
 \RequirePackage{mathMacr}
 
 \recalctypearea
-\RequirePackage[ngerman, english]{babel}
-
+% \RequirePackage[ngerman, english]{babel}
 \renewcommand\labelitemi{\(\bullet\)}
+
