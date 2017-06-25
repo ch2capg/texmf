@@ -23,7 +23,7 @@
 \RequirePackage{capgPalatino}
 \RequirePackage[mathpazo]{flexisym}
 \RequirePackage{breqn}
-\RequirePackage{capgThm}
+\RequirePackage[note]{capgThm}
 \RequirePackage{mathMacr}
 
 \RequirePackage{epigraph}

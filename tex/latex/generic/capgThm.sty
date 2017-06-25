@@ -1,17 +1,25 @@
 %  Revision history
 %  --------------------------------------------------
 % 
+%       Revised by Christian Power June 2017
 %       Revised by Christian Power September 2016
 %       Revised by Christian Power August 2016
 %       Originally written by Christian Power
 %            (power22c@gmail.com) 21.07.2015
 % 
 %  Produce nice lines next to the theorems.
-%  Copyright (c) 2016 Christian Power.  All rights reserved.
+%  Copyright (c) 2017 Christian Power.  All rights reserved.
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{capgThm}[2016/09/26 v0.1.1 Hatcher style for theorems]
+\ProvidesPackage{capgThm}[2017/06/25 v0.2 Hatcher style for theorems]
+
+\newif\ifmypackage@noteSupport
+\DeclareOption{note}{\mypackage@noteSupporttrue}
+\DeclareOption{nonote}{\mypackage@noteSupportfalse}
+\ExecuteOptions{nonote}
+\DeclareOption*{\PackageWarning{capgThm}{Unknown ‘\CurrentOption’}}
+\ProcessOptions\relax
 
 \RequirePackage{amsthm}
 \RequirePackage{tikz}
@@ -84,7 +92,11 @@
                         %`normal')
 % ------------------------------
 \theoremstyle{satz}
-\newtheorem{lemma}{Lemma}[section]
+\ifmypackage@noteSupport
+  \newtheorem{lemma}{Lemma}[subsection]
+\else
+  \newtheorem{lemma}{Lemma}[section]
+\fi
 \surroundwithmdframed[style=satzmdf]{lemma}
 \newtheorem{proposition}[lemma]{Proposition}
 \surroundwithmdframed[style=satzmdf]{proposition}
