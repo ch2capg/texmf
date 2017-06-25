@@ -10,10 +10,12 @@
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{note}[2016/10/13 v0.0.1 note class]
+\ProvidesClass{note}[2017/07/25 v0.0.2 note class]
 
 \LoadClass[a5paper, DIV=calc]{scrartcl}
+\RequirePackage[headsepline=.5pt]{scrlayer-scrpage}
 \RequirePackage[colorlinks=true,pdfpagelabels]{hyperref}
+\RequirePackage[titles]{tocloft}
 \hypersetup{linkcolor=blue, citecolor=blue}
 \RequirePackage{enumitem}
 \RequirePackage{stdPack}
@@ -24,6 +26,11 @@
 \RequirePackage{capgThm}
 \RequirePackage{mathMacr}
 
+\RequirePackage{epigraph}
+\RequirePackage{newfloat}
+\RequirePackage{caption}
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
 \recalctypearea
 % \RequirePackage[ngerman, english]{babel}
 \renewcommand\labelitemi{\(\bullet\)}
