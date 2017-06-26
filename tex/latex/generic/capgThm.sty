@@ -12,7 +12,7 @@
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{capgThm}[2017/06/26 v0.3.1 Hatcher style for theorems]
+\ProvidesPackage{capgThm}[2017/06/26 v0.4 Hatcher style for theorems]
 
 \newif\ifmypackage@noteSupport
 \DeclareOption{note}{\mypackage@noteSupporttrue}
@@ -195,6 +195,7 @@
   \surroundwithmdframed[style=defiBoxMdf]{parDifEqBox*}
   \theoremstyle{defiNoFrameBox}
   \newtheorem{remark}[lemmaBox]{Remark}
+  \newtheorem*{remark*}{Remark}
   \newtheorem{problem}[lemmaBox]{Problem}
   \newtheorem{assumption}[lemmaBox]{Assumption}
   \newtheorem{example}[lemmaBox]{Example}
@@ -249,6 +250,7 @@
   % innerlinecolor=red]{assumption}
   \theoremstyle{defiNoFrame}
   \newtheorem{remark}[lemma]{Remark}
+  \newtheorem*{remark*}{Remark}
   \newtheorem{problem}[lemma]{Problem}
   \newtheorem{assumption}[lemma]{Assumption}
   \newtheorem{example}[lemma]{Example}
