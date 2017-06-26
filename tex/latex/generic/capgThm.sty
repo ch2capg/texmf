@@ -12,7 +12,7 @@
 % ----------------------------------------------------------------------
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{capgThm}[2017/06/25 v0.3 Hatcher style for theorems]
+\ProvidesPackage{capgThm}[2017/06/26 v0.3.1 Hatcher style for theorems]
 
 \newif\ifmypackage@noteSupport
 \DeclareOption{note}{\mypackage@noteSupporttrue}
@@ -24,6 +24,21 @@
 \RequirePackage{amsthm}
 \RequirePackage{tikz}
 \RequirePackage[framemethod=tikz]{mdframed}
+
+
+% --------------------------------------------------
+% Spacing
+\newlength\boxBeginInternal
+\setlength\boxBeginInternal{-2.5ex}
+\newlength\boxEndInternal
+\setlength\boxEndInternal{-.6ex}
+\newlength{\hatcherBoxBegin}  
+\setlength\hatcherBoxBegin{1.3ex plus .25ex minus .5ex}
+\newlength{\hatcherBoxEnd}
+\setlength\hatcherBoxEnd{-.1ex plus .25ex minus .5ex}
+
+% --------------------------------------------------
+% Box setup
 
 \ifmypackage@noteSupport
   \mdfsetup{skipabove=0ex, skipbelow=0ex}
@@ -103,6 +118,22 @@
 {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
                         %Thm head spec (can be left empty, meaning
                         %`normal')
+
+\newtheoremstyle{defiNoFrameBox}
+{\hatcherBoxBegin}                   %Space above
+{\hatcherBoxBegin}                   %Space below
+{\normalfont}           %Body font
+{}                      %Indent amount (empty = no indent,
+                        %\parindent = para indent)
+{\normalfont\sffamily\bfseries}  %Thm head font
+{.}                     %Punctuation after thm head
+{ }              %Space after thm head: " " = normal interword
+                        %space; \newline = linebreak
+{\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+                        %Thm head spec (can be left empty, meaning
+                        %`normal')
+
+
 \newtheoremstyle{satz}
 {-\topsep}                   %Space above
 {2ex plus 2ex minus 2ex}                   %Space below
@@ -162,22 +193,11 @@
   \surroundwithmdframed[style=defiBoxMdf]{parDifEqBox}
   \newtheorem*{parDifEqBox*}{PDEBox}
   \surroundwithmdframed[style=defiBoxMdf]{parDifEqBox*}
-  \theoremstyle{defiNoFrame}
+  \theoremstyle{defiNoFrameBox}
   \newtheorem{remark}[lemmaBox]{Remark}
   \newtheorem{problem}[lemmaBox]{Problem}
   \newtheorem{assumption}[lemmaBox]{Assumption}
   \newtheorem{example}[lemmaBox]{Example}
-
-  % --------------------------------------------------
-  % Handling spacing
-  \newlength\boxBeginInternal
-  \setlength\boxBeginInternal{-2.5ex}
-  \newlength\boxEndInternal
-  \setlength\boxEndInternal{-.6ex}
-  \newlength{\hatcherBoxBegin}  
-  \setlength\hatcherBoxBegin{1.3ex plus .25ex minus .5ex}
-  \newlength{\hatcherBoxEnd}
-  \setlength\hatcherBoxEnd{-.1ex plus .25ex minus .5ex}
   
   % White space for a Hatcher box
   % Input: #1 known name, #2 new name
@@ -204,7 +224,7 @@
   \wsHatcher{parDifEqBox}{parDifEq}
   \wsHatcher{parDifEqBox*}{parDifEq*}
 
-\else
+\else % nonoteSupport
   \theoremstyle{satz}
   \newtheorem{lemma}{Lemma}[section]
   \surroundwithmdframed[style=satzmdf]{lemma}
