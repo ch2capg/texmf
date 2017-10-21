@@ -85,17 +85,17 @@
     Tübingen \\ \@dissYear
   \end{otherlanguage}
 \end{titlepage}
-% \phantom{.}
-% \vfill
-% \begin{otherlanguage}{ngerman}
-%   \noindent Veröffentlicht mit Genehmigung der 
-%   Mathe\-mat\-isch\--Na\-tur\-wis\-sen\-scha\-ft\-li\-chen 
-%   Fakultät der Eberhard Karls Universität Tübingen \\[2ex]
-%   Tag der mündlichen Qualifikation: \hfill \dissDate \\
-%   Dekan: \hfill  \@dean \\
-%   1. Berichterstatter: \hfill \@supervisor \\
-%   2. Berichterstatter: \hfill \@supervisorTwo 
-% \end{otherlanguage}
+\phantom{.}
+\vfill
+\begin{otherlanguage}{ngerman}
+  \noindent Veröffentlicht mit Genehmigung der 
+  Mathe\-mat\-isch\--Na\-tur\-wis\-sen\-scha\-ft\-li\-chen 
+  Fakultät der Eberhard Karls Universität Tübingen \\[2ex]
+  Tag der mündlichen Qualifikation: \hfill \dissDate \\
+  Dekan: \hfill  \@dean \\
+  1. Berichterstatter: \hfill \@supervisor \\
+  2. Berichterstatter: \hfill \@supervisorTwo 
+\end{otherlanguage}
 \cleardoublepage
 }
 \endinput
